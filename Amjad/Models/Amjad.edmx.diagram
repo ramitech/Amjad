@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="84b244545e1a442192f3537eef05a4f7" Name="Diagram1">
+        <EntityTypeShape EntityType="AmjadModel.Adv" Width="1.5" PointX="6" PointY="31.625" />
+        <EntityTypeShape EntityType="AmjadModel.AdvPosition" Width="1.5" PointX="3.75" PointY="44.75" />
+        <EntityTypeShape EntityType="AmjadModel.Client" Width="1.5" PointX="6" PointY="36.75" />
+        <EntityTypeShape EntityType="AmjadModel.ContactU" Width="1.5" PointX="9" PointY="37.125" />
+        <EntityTypeShape EntityType="AmjadModel.ContactUsCategory" Width="1.5" PointX="6.75" PointY="48" />
+        <EntityTypeShape EntityType="AmjadModel.ContactUsInfo" Width="1.5" PointX="3" PointY="74.625" />
+        <EntityTypeShape EntityType="AmjadModel.Counter" Width="1.5" PointX="3" PointY="40.375" />
+        <EntityTypeShape EntityType="AmjadModel.Image" Width="1.5" PointX="9" PointY="21.5" />
+        <EntityTypeShape EntityType="AmjadModel.ImagesCategory" Width="1.5" PointX="6.75" PointY="16.375" />
+        <EntityTypeShape EntityType="AmjadModel.Language" Width="1.5" PointX="6.75" PointY="24.625" />
+        <EntityTypeShape EntityType="AmjadModel.News" Width="1.5" PointX="5.25" PointY="54.75" />
+        <EntityTypeShape EntityType="AmjadModel.NewsCategory" Width="1.5" PointX="3" PointY="81.25" />
+        <EntityTypeShape EntityType="AmjadModel.NewsComment" Width="1.5" PointX="7.5" PointY="42.75" />
+        <EntityTypeShape EntityType="AmjadModel.PagesCategory" Width="1.5" PointX="6.75" PointY="21.5" />
+        <EntityTypeShape EntityType="AmjadModel.Slider" Width="1.5" PointX="3" PointY="25.5" />
+        <EntityTypeShape EntityType="AmjadModel.SuperAccount" Width="1.5" PointX="0.75" PointY="28.875" />
+        <EntityTypeShape EntityType="AmjadModel.SuperPageCategory" Width="1.5" PointX="1.5" PointY="22" />
+        <EntityTypeShape EntityType="AmjadModel.SuperPermission" Width="1.5" PointX="6" PointY="28.625" />
+        <EntityTypeShape EntityType="AmjadModel.Video" Width="1.5" PointX="9" PointY="31.375" />
+        <EntityTypeShape EntityType="AmjadModel.VideosCategory" Width="1.5" PointX="6.75" PointY="19" />
+        <AssociationConnector Association="AmjadModel.FK_Adv_AdvPositions" />
+        <AssociationConnector Association="AmjadModel.FK_Adv_Languages" />
+        <AssociationConnector Association="AmjadModel.FK_Adv_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_Adv_SuperAccountsDelete" />
+        <AssociationConnector Association="AmjadModel.FK_Adv_SuperAccountsUpdate" />
+        <AssociationConnector Association="AmjadModel.FK_Clients_Languages" />
+        <AssociationConnector Association="AmjadModel.FK_Clients_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_Clients_SuperAccountsDelete" />
+        <AssociationConnector Association="AmjadModel.FK_Clients_SuperAccountsUpdate" />
+        <AssociationConnector Association="AmjadModel.FK_ContactUs_ContactUsCategory" />
+        <AssociationConnector Association="AmjadModel.FK_ContactUs_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_ContactUsInfo_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_ContactUsInfo_SuperAccountsUpdate" />
+        <AssociationConnector Association="AmjadModel.FK_Counts_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_Counts_SuperAccountsUpdate" />
+        <AssociationConnector Association="AmjadModel.FK_Images_ImagesCategory" />
+        <AssociationConnector Association="AmjadModel.FK_Images_Languages" />
+        <AssociationConnector Association="AmjadModel.FK_News_Languages" />
+        <AssociationConnector Association="AmjadModel.FK_Slider_Languages" />
+        <AssociationConnector Association="AmjadModel.FK_Videos_Languages" />
+        <AssociationConnector Association="AmjadModel.FK_News_NewsCategory" />
+        <AssociationConnector Association="AmjadModel.FK_News_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_News_SuperAccountsDelete" />
+        <AssociationConnector Association="AmjadModel.FK_News_SuperAccountsUpdate" />
+        <AssociationConnector Association="AmjadModel.FK_NewsComments_News" />
+        <AssociationConnector Association="AmjadModel.FK_NewsCategory_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_NewsCategory_SuperAccountsDelete" />
+        <AssociationConnector Association="AmjadModel.FK_NewsCategory_SuperAccountsUpdate" />
+        <AssociationConnector Association="AmjadModel.FK_NewsComments_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_NewsComments_SuperAccountsDelete" />
+        <AssociationConnector Association="AmjadModel.FK_Slider_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_Slider_SuperAccountsDelete" />
+        <AssociationConnector Association="AmjadModel.FK_Slider_SuperAccountsUpdate" />
+        <AssociationConnector Association="AmjadModel.FK_SuperPermissions_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_Videos_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_Videos_SuperAccountsDelete" />
+        <AssociationConnector Association="AmjadModel.FK_Videos_SuperAccountsUpdate" />
+        <AssociationConnector Association="AmjadModel.FK_Videos_VideosCategory" />
+        <EntityTypeShape EntityType="AmjadModel.Lawyer" Width="1.5" PointX="12" PointY="27.875" />
+        <AssociationConnector Association="AmjadModel.FK_Lawyers_Languages" />
+        <AssociationConnector Association="AmjadModel.FK_Lawyers_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_Lawyers_SuperAccountsDelete" />
+        <AssociationConnector Association="AmjadModel.FK_Lawyers_SuperAccountsUpdate" />
+        <EntityTypeShape EntityType="AmjadModel.SuperPage" Width="1.5" PointX="3.75" PointY="21.25" />
+        <AssociationConnector Association="AmjadModel.FK_SuperPages_SuperPageCategory" />
+        <AssociationConnector Association="AmjadModel.FK_SuperPermissions_SuperPages" />
+        <EntityTypeShape EntityType="AmjadModel.Page" Width="1.5" PointX="9" PointY="26.125" />
+        <AssociationConnector Association="AmjadModel.FK_Pages_Languages" />
+        <AssociationConnector Association="AmjadModel.FK_Pages_PagesCategory" />
+        <AssociationConnector Association="AmjadModel.FK_Pages_SuperAccounts" />
+        <AssociationConnector Association="AmjadModel.FK_Pages_SuperAccountsUpdate" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

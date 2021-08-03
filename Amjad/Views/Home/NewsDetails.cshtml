@@ -1,0 +1,28 @@
+﻿@model Amjad.Models.News
+@{
+    ViewBag.Title = !String.IsNullOrEmpty(Model.Title) ? Model.Title : Model.Summary;
+ }
+<!-- Start Blog Detail -->
+<div class="container blog-wrapper padding-lg">
+    <div class="row">
+        <!-- Start Left Column -->
+        <div class="col-sm-12 blog-left">
+            <ul class="blog-listing detail">
+                <li>
+                    <img src="/Content/Files/@Model.ImageName" class="img-responsive" alt="@Model.Title">
+                    <h2>@Model.Title</h2>
+                    <ul class="post-detail">
+                        <li><span class="icon-date-icon ico"></span><span class="bold">@Model.Date.Value.ToString("dd MMMM")</span> @Model.Date.Value.ToString("yyyy")</li>
+                    </ul>
+                    <p>
+                        @Html.Raw(Model.Details)
+                    </p>
+                  
+                </li>
+            </ul>
+        </div>
+        <!-- End Left Column -->
+       
+    </div>
+</div>
+<!-- End Blog Detail --> 

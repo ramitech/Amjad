@@ -1,0 +1,294 @@
+﻿
+@{
+    ViewBag.Title = "الصفحة الرئيسة";
+    var Counters = ViewBag.Counters as Amjad.Models.Counter;
+    var Pages = ViewBag.Pages as IEnumerable<Amjad.Models.Page>;
+    var About = Pages.First(x => x.catId == 2);
+    var Consult = Pages.First(x => x.catId == 16);
+    var SpecilityPages = Pages.Where(x => x.catId >= 7 && x.catId <= 15).ToList();
+    var Lawyers = ViewBag.Lawyers as IEnumerable<Amjad.Models.Lawyer>;
+    var SayAboutUs = ViewBag.SayAboutUs as IEnumerable<Amjad.Models.News>;
+    var Clients = ViewBag.Clients as IEnumerable<Amjad.Models.Client>;
+    var News = ViewBag.News as IEnumerable<Amjad.Models.News>;
+    var Videos = ViewBag.Videos as IEnumerable<Amjad.Models.Video>;
+
+}
+
+<!-- Start About Section -->
+<div class="counter_sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <div class="box first">
+                    <div class="icon">
+                        <img src="/Content/FrontEnd/images/sucess-cases.png" alt="" />
+                    </div>
+                    <div class="content">
+                        <span class="counter">@Counters.CasesCount</span>
+                        <div class="title">القضايا الناجحة</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="box">
+                    <div class="icon">
+                        <img src="/Content/FrontEnd/images/clients-icon.png" alt="" />
+                    </div>
+                    <div class="content">
+                        <span class="counter">@Counters.ClientsCount</span>
+                        <div class="title">عملاء موثوق بهم</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="box">
+                    <div class="icon">
+                        <img src="/Content/FrontEnd/images/awards-icon.png" alt="" />
+                    </div>
+                    <div class="content">
+                        <span class="counter">@Counters.AwardsCount</span>
+                        <div class="title">شهادات تقدير</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="box">
+                    <div class="icon">
+                        <img src="/Content/FrontEnd/images/lawyers-icon.png" alt="" />
+                    </div>
+                    <div class="content">
+                        <span class="counter">@Counters.LawyersCount</span>
+                        <div class="title">محامون مؤهلون</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Banner Carousel -->
+<!-- Start About Section -->
+<section class="about">
+    <div class="container">
+        <div class="row heading heading-icon">
+            <h2>من نحن</h2>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 left-block">
+                @About.Summary.Replace("\n", "<br>")
+                <a href="@Url.Action("About")" class="know-more">تعرف أكثر </a>
+            </div>
+            <div class="col-12 col-md-6 right-block">
+                <img src="~/Content/Files/@About.ImageName" class="img-responsive" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About Section -->
+<!-- Start نحن هنا Section -->
+<section class="we-are-here">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12 left-block">
+                <div class="details">
+                    <h4>@Consult.Title</h4>
+                    <p>@Html.Raw(Consult.Summary.Replace("\n", "<br>"))</p>
+                    <a class="free-btn" href="@Url.Action("Consult")">استشارة مجانية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End نحن هنا Section -->
+<!-- Start Practice Area Section -->
+<section class="practice-area padding-lg">
+    <div class="container">
+        <div class="row heading heading-icon">
+            <h2>مجال اختصاصنا </h2>
+        </div>
+        <ul class="row">
+            @foreach (var item in SpecilityPages)
+            {
+                <li class="col-12 col-md-4 equal-hight">
+                    <div class="inner">
+                        <img src="~/Content/Files/@item.ImageName" alt="@item.Title">
+                        <h3>@item.Title</h3>
+                        <p>@Html.Raw(item.Summary.Replace("\n", "<br>"))</p>
+                        <a class="read-more" href="@Url.Action("Page",new {@id = item.catId })">إقرأ المزيد</a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</section>
+<!-- End Practice Area Section -->
+<!-- Start محاموننا Section -->
+<section class="our-attorneys padding-lg">
+    <div class="container">
+        <div class="row heading heading-icon">
+            <h2>محامونا</h2>
+        </div>
+        <ul class="row">
+            @foreach (var item in Lawyers)
+            {
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="cnt-block equal-hight">
+                        <figure><img src="~/Content/Files/@item.Image" class="img-responsive" alt=""></figure>
+                        <h3><a href="attorney-profile.html">@item.Name</a></h3>
+                        <p>@item.JobTitle</p>
+                        <ul class="follow-us clearfix">
+                            @if (!string.IsNullOrEmpty(item.FaceBook))
+                            {
+                                <li><a href="@item.FaceBook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(item.Twitter))
+                            {
+                                <li><a href="@item.Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(item.LinkedIn))
+                            {
+                                <li><a href="@item.LinkedIn" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            }
+                        </ul>
+                    </div>
+                </li>
+            }
+
+
+        </ul>
+    </div>
+</section>
+<!-- End محاموننا Section -->
+<!-- Start New & Events Section -->
+<section class="news-events padding-lg">
+    <div class="container">
+        <div class="row heading heading-icon">
+            <h2>متقطفات قانونية</h2>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8 left-block">
+                @{
+                    var MainVideo = Videos.First();
+                    var OtherVideos = Videos.Skip(1).ToList();
+                }
+                <div class="news-box">
+                    <figure>
+                        <a class="iFrame" title="@MainVideo.Title" href="@MainVideo.VideoName">
+                            <img src="@MainVideo.ImageName" class="img-responsive" alt="@MainVideo.Title" style="width:700px !important" />
+                        </a>
+                    </figure>
+                    <div class="date"><span>@MainVideo.Date.Value.ToString("dd")</span>@MainVideo.Date.Value.ToString("MMM yyyy")</div>
+                    <h2>
+                        <a class="iFrame" title="@MainVideo.Title" href="@MainVideo.VideoName" style="color:#ffa201 !important">
+                            @MainVideo.Title
+                        </a>
+                    </h2>
+                    @*<div class="meta"><i class="fa fa-user" aria-hidden="true"></i>جون سميث<span><i class="fa fa-comment" aria-hidden="true"></i>٣٢</span></div>*@
+                    @*<p>@Html.Raw(MainVideo.Summary.Replace("\n", "<br>"))</p>*@
+                    <a class="read-more" href="@Url.Action("videos")">المزيد </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 right-block">
+                <ul class="news-listes">
+                    @foreach (var item in OtherVideos)
+                    {
+                        <li>
+                            <figure>
+                                <a class="iFrame" title="@item.Title" href="@item.VideoName">
+                                    <img src="@item.ImageName" alt="@item.Title" style="width:115px !important" />
+                                </a>
+                            </figure>
+                            <div class="news-list-details">
+                                <h2>
+                                    <a class="iFrame" title="@item.Title" href="@item.VideoName" style="color:#ffa201 !important">
+                                        @item.Title
+                                    </a>
+                                </h2>
+                                @*<div class="meta"><i class="fa fa-user" aria-hidden="true"></i>جون سميث<span><i class="fa fa-comment" aria-hidden="true"></i>٣٢</span></div>*@
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End New & Events Section -->
+<!-- Start logos Section -->
+<section class="logos">
+    <div class="container">
+        <ul class="owl-carousel clearfix">
+            @foreach (var item in Clients)
+            {
+                <li><a href="@item.Link" target="_blank"><img src="~/Content/Files/@item.Image" class="img-responsive" alt="@item.Title" title="@item.Title"></a></li>
+            }
+
+        </ul>
+    </div>
+</section>
+<!-- End logos Section -->
+<!-- Start Testimonial -->
+<section class="testimonial padding-lg">
+    <div class="container">
+        <div class="row heading heading-icon">
+            <h2>شهادات العملاء</h2>
+        </div>
+        <div class="wrapper">
+            <ul class="testimonial-slide">
+                @foreach (var item in SayAboutUs)
+                {
+                    <li>
+                        <p>
+                            @Html.Raw(item.Summary.Replace("\n", "<br>"))
+                        </p>
+                        <p><span>- @item.Title</span></p>
+                    </li>
+                }
+
+            </ul>
+            <div id="bx-pager"></div>
+        </div>
+    </div>
+</section>
+<!-- End Testimonial -->
+@*<section class="news-events padding-lg">
+            <div class="container">
+                <div class="row heading heading-icon">
+                    <h2>أخبارنا</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-8 left-block">
+                        @{
+                            var MainNews = News.First();
+                            var OtherNews = News.Skip(1).ToList();
+                        }
+                        <div class="news-box">
+                            <figure>
+                                <img src="~/Content/Files/@MainNews.ImageName" class="img-responsive" alt="">
+                            </figure>
+                            <div class="date"><span>@MainNews.Date.Value.ToString("dd")</span>@MainNews.Date.Value.ToString("MMM yyyy")</div>
+                            <h2>@MainNews.Title</h2>-->
+                            <!--<div class="meta"><i class="fa fa-user" aria-hidden="true"></i>جون سميث<span><i class="fa fa-comment" aria-hidden="true"></i>٣٢</span></div> -->
+        <p>@Html.Raw(MainNews.Summary.Replace("\n", "<br>"))</p>
+        <a href="@Url.Action("NewsDetails",new {@id = MainNews.id })" class="read-more">تعرف أكثر </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 right-block">
+            <ul class="news-listes">
+                @foreach (var item in OtherNews)
+                {
+                    <li>
+                        <figure>
+                            <img src="~/Content/Files/@item.ImageName" alt="" />
+                        </figure>
+                        <div class="news-list-details">
+                            <h2>@item.Title</h2>-->
+                             <!--<div class="meta"><i class="fa fa-user" aria-hidden="true"></i>جون سميث<span><i class="fa fa-comment" aria-hidden="true"></i>٣٢</span></div> -->
+    <!--</div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>*@
+<!-- End New & Events Section -->

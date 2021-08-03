@@ -1,0 +1,1234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AmjadModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AmjadEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Advs" EntityType="AmjadModel.Adv" />
+    <EntitySet Name="AdvPositions" EntityType="AmjadModel.AdvPosition" />
+    <EntitySet Name="Clients" EntityType="AmjadModel.Client" />
+    <EntitySet Name="ContactUs" EntityType="AmjadModel.ContactU" />
+    <EntitySet Name="ContactUsCategories" EntityType="AmjadModel.ContactUsCategory" />
+    <EntitySet Name="ContactUsInfoes" EntityType="AmjadModel.ContactUsInfo" />
+    <EntitySet Name="Counters" EntityType="AmjadModel.Counter" />
+    <EntitySet Name="Images" EntityType="AmjadModel.Image" />
+    <EntitySet Name="ImagesCategories" EntityType="AmjadModel.ImagesCategory" />
+    <EntitySet Name="Languages" EntityType="AmjadModel.Language" />
+    <EntitySet Name="News" EntityType="AmjadModel.News" />
+    <EntitySet Name="NewsCategories" EntityType="AmjadModel.NewsCategory" />
+    <EntitySet Name="NewsComments" EntityType="AmjadModel.NewsComment" />
+    <EntitySet Name="PagesCategories" EntityType="AmjadModel.PagesCategory" />
+    <EntitySet Name="Sliders" EntityType="AmjadModel.Slider" />
+    <EntitySet Name="SuperAccounts" EntityType="AmjadModel.SuperAccount" />
+    <EntitySet Name="SuperPageCategories" EntityType="AmjadModel.SuperPageCategory" />
+    <EntitySet Name="SuperPermissions" EntityType="AmjadModel.SuperPermission" />
+    <EntitySet Name="Videos" EntityType="AmjadModel.Video" />
+    <EntitySet Name="VideosCategories" EntityType="AmjadModel.VideosCategory" />
+    <AssociationSet Name="FK_Adv_AdvPositions" Association="AmjadModel.FK_Adv_AdvPositions">
+      <End Role="AdvPosition" EntitySet="AdvPositions" />
+      <End Role="Adv" EntitySet="Advs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adv_Languages" Association="AmjadModel.FK_Adv_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Adv" EntitySet="Advs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adv_SuperAccounts" Association="AmjadModel.FK_Adv_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Adv" EntitySet="Advs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adv_SuperAccountsDelete" Association="AmjadModel.FK_Adv_SuperAccountsDelete">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Adv" EntitySet="Advs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adv_SuperAccountsUpdate" Association="AmjadModel.FK_Adv_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Adv" EntitySet="Advs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Languages" Association="AmjadModel.FK_Clients_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Client" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_SuperAccounts" Association="AmjadModel.FK_Clients_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Client" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_SuperAccountsDelete" Association="AmjadModel.FK_Clients_SuperAccountsDelete">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Client" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_SuperAccountsUpdate" Association="AmjadModel.FK_Clients_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Client" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactUs_ContactUsCategory" Association="AmjadModel.FK_ContactUs_ContactUsCategory">
+      <End Role="ContactUsCategory" EntitySet="ContactUsCategories" />
+      <End Role="ContactU" EntitySet="ContactUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactUs_SuperAccounts" Association="AmjadModel.FK_ContactUs_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="ContactU" EntitySet="ContactUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactUsInfo_SuperAccounts" Association="AmjadModel.FK_ContactUsInfo_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="ContactUsInfo" EntitySet="ContactUsInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactUsInfo_SuperAccountsUpdate" Association="AmjadModel.FK_ContactUsInfo_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="ContactUsInfo" EntitySet="ContactUsInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Counts_SuperAccounts" Association="AmjadModel.FK_Counts_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Counter" EntitySet="Counters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Counts_SuperAccountsUpdate" Association="AmjadModel.FK_Counts_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Counter" EntitySet="Counters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Images_ImagesCategory" Association="AmjadModel.FK_Images_ImagesCategory">
+      <End Role="ImagesCategory" EntitySet="ImagesCategories" />
+      <End Role="Image" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Images_Languages" Association="AmjadModel.FK_Images_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Image" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Languages" Association="AmjadModel.FK_News_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Slider_Languages" Association="AmjadModel.FK_Slider_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Slider" EntitySet="Sliders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_Languages" Association="AmjadModel.FK_Videos_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Video" EntitySet="Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_NewsCategory" Association="AmjadModel.FK_News_NewsCategory">
+      <End Role="NewsCategory" EntitySet="NewsCategories" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_SuperAccounts" Association="AmjadModel.FK_News_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_SuperAccountsDelete" Association="AmjadModel.FK_News_SuperAccountsDelete">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_SuperAccountsUpdate" Association="AmjadModel.FK_News_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsComments_News" Association="AmjadModel.FK_NewsComments_News">
+      <End Role="News" EntitySet="News" />
+      <End Role="NewsComment" EntitySet="NewsComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsCategory_SuperAccounts" Association="AmjadModel.FK_NewsCategory_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="NewsCategory" EntitySet="NewsCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsCategory_SuperAccountsDelete" Association="AmjadModel.FK_NewsCategory_SuperAccountsDelete">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="NewsCategory" EntitySet="NewsCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsCategory_SuperAccountsUpdate" Association="AmjadModel.FK_NewsCategory_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="NewsCategory" EntitySet="NewsCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsComments_SuperAccounts" Association="AmjadModel.FK_NewsComments_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="NewsComment" EntitySet="NewsComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsComments_SuperAccountsDelete" Association="AmjadModel.FK_NewsComments_SuperAccountsDelete">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="NewsComment" EntitySet="NewsComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Slider_SuperAccounts" Association="AmjadModel.FK_Slider_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Slider" EntitySet="Sliders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Slider_SuperAccountsDelete" Association="AmjadModel.FK_Slider_SuperAccountsDelete">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Slider" EntitySet="Sliders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Slider_SuperAccountsUpdate" Association="AmjadModel.FK_Slider_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Slider" EntitySet="Sliders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuperPermissions_SuperAccounts" Association="AmjadModel.FK_SuperPermissions_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="SuperPermission" EntitySet="SuperPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_SuperAccounts" Association="AmjadModel.FK_Videos_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Video" EntitySet="Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_SuperAccountsDelete" Association="AmjadModel.FK_Videos_SuperAccountsDelete">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Video" EntitySet="Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_SuperAccountsUpdate" Association="AmjadModel.FK_Videos_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Video" EntitySet="Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_VideosCategory" Association="AmjadModel.FK_Videos_VideosCategory">
+      <End Role="VideosCategory" EntitySet="VideosCategories" />
+      <End Role="Video" EntitySet="Videos" />
+    </AssociationSet>
+    <EntitySet Name="Lawyers" EntityType="AmjadModel.Lawyer" />
+    <AssociationSet Name="FK_Lawyers_Languages" Association="AmjadModel.FK_Lawyers_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Lawyer" EntitySet="Lawyers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lawyers_SuperAccounts" Association="AmjadModel.FK_Lawyers_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Lawyer" EntitySet="Lawyers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lawyers_SuperAccountsDelete" Association="AmjadModel.FK_Lawyers_SuperAccountsDelete">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Lawyer" EntitySet="Lawyers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lawyers_SuperAccountsUpdate" Association="AmjadModel.FK_Lawyers_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Lawyer" EntitySet="Lawyers" />
+    </AssociationSet>
+    <EntitySet Name="SuperPages" EntityType="AmjadModel.SuperPage" />
+    <AssociationSet Name="FK_SuperPages_SuperPageCategory" Association="AmjadModel.FK_SuperPages_SuperPageCategory">
+      <End Role="SuperPageCategory" EntitySet="SuperPageCategories" />
+      <End Role="SuperPage" EntitySet="SuperPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuperPermissions_SuperPages" Association="AmjadModel.FK_SuperPermissions_SuperPages">
+      <End Role="SuperPage" EntitySet="SuperPages" />
+      <End Role="SuperPermission" EntitySet="SuperPermissions" />
+    </AssociationSet>
+    <EntitySet Name="Pages" EntityType="AmjadModel.Page" />
+    <AssociationSet Name="FK_Pages_Languages" Association="AmjadModel.FK_Pages_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Page" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_PagesCategory" Association="AmjadModel.FK_Pages_PagesCategory">
+      <End Role="PagesCategory" EntitySet="PagesCategories" />
+      <End Role="Page" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_SuperAccounts" Association="AmjadModel.FK_Pages_SuperAccounts">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Page" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_SuperAccountsUpdate" Association="AmjadModel.FK_Pages_SuperAccountsUpdate">
+      <End Role="SuperAccount" EntitySet="SuperAccounts" />
+      <End Role="Page" EntitySet="Pages" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Adv">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PositionId" Type="Int32" />
+    <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="LangId" Type="Int32" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="AdvPosition" Relationship="AmjadModel.FK_Adv_AdvPositions" FromRole="Adv" ToRole="AdvPosition" />
+    <NavigationProperty Name="Language" Relationship="AmjadModel.FK_Adv_Languages" FromRole="Adv" ToRole="Language" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_Adv_SuperAccounts" FromRole="Adv" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_Adv_SuperAccountsDelete" FromRole="Adv" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount2" Relationship="AmjadModel.FK_Adv_SuperAccountsUpdate" FromRole="Adv" ToRole="SuperAccount" />
+  </EntityType>
+  <EntityType Name="AdvPosition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Width" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Advs" Relationship="AmjadModel.FK_Adv_AdvPositions" FromRole="AdvPosition" ToRole="Adv" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="OrderId" Type="Int32" />
+    <Property Name="LangId" Type="Int32" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Language" Relationship="AmjadModel.FK_Clients_Languages" FromRole="Client" ToRole="Language" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_Clients_SuperAccounts" FromRole="Client" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_Clients_SuperAccountsDelete" FromRole="Client" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount2" Relationship="AmjadModel.FK_Clients_SuperAccountsUpdate" FromRole="Client" ToRole="SuperAccount" />
+  </EntityType>
+  <EntityType Name="ContactU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CatId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ContactUsCategory" Relationship="AmjadModel.FK_ContactUs_ContactUsCategory" FromRole="ContactU" ToRole="ContactUsCategory" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_ContactUs_SuperAccounts" FromRole="ContactU" ToRole="SuperAccount" />
+  </EntityType>
+  <EntityType Name="ContactUsCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ContactUs" Relationship="AmjadModel.FK_ContactUs_ContactUsCategory" FromRole="ContactUsCategory" ToRole="ContactU" />
+  </EntityType>
+  <EntityType Name="ContactUsInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Skype1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Skype2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FaceBook" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Twitter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Google" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Linkedin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Pinterest" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Instagram" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GoogleMap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Info" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AddressEn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InfoEn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_ContactUsInfo_SuperAccounts" FromRole="ContactUsInfo" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_ContactUsInfo_SuperAccountsUpdate" FromRole="ContactUsInfo" ToRole="SuperAccount" />
+  </EntityType>
+  <EntityType Name="Counter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CasesCount" Type="Int32" />
+    <Property Name="ClientsCount" Type="Int32" />
+    <Property Name="AwardsCount" Type="Int32" />
+    <Property Name="LawyersCount" Type="Int32" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_Counts_SuperAccounts" FromRole="Counter" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_Counts_SuperAccountsUpdate" FromRole="Counter" ToRole="SuperAccount" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CatId" Type="Int32" />
+    <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LangId" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="ImagesCategory" Relationship="AmjadModel.FK_Images_ImagesCategory" FromRole="Image" ToRole="ImagesCategory" />
+    <NavigationProperty Name="Language" Relationship="AmjadModel.FK_Images_Languages" FromRole="Image" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="ImagesCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Images" Relationship="AmjadModel.FK_Images_ImagesCategory" FromRole="ImagesCategory" ToRole="Image" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <NavigationProperty Name="Advs" Relationship="AmjadModel.FK_Adv_Languages" FromRole="Language" ToRole="Adv" />
+    <NavigationProperty Name="Clients" Relationship="AmjadModel.FK_Clients_Languages" FromRole="Language" ToRole="Client" />
+    <NavigationProperty Name="Images" Relationship="AmjadModel.FK_Images_Languages" FromRole="Language" ToRole="Image" />
+    <NavigationProperty Name="News" Relationship="AmjadModel.FK_News_Languages" FromRole="Language" ToRole="News" />
+    <NavigationProperty Name="Sliders" Relationship="AmjadModel.FK_Slider_Languages" FromRole="Language" ToRole="Slider" />
+    <NavigationProperty Name="Videos" Relationship="AmjadModel.FK_Videos_Languages" FromRole="Language" ToRole="Video" />
+    <NavigationProperty Name="Lawyers" Relationship="AmjadModel.FK_Lawyers_Languages" FromRole="Language" ToRole="Lawyer" />
+    <NavigationProperty Name="Pages" Relationship="AmjadModel.FK_Pages_Languages" FromRole="Language" ToRole="Page" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catId" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VideoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LangId" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="IsBest" Type="Boolean" />
+    <Property Name="Views" Type="Int32" />
+    <NavigationProperty Name="Language" Relationship="AmjadModel.FK_News_Languages" FromRole="News" ToRole="Language" />
+    <NavigationProperty Name="NewsCategory" Relationship="AmjadModel.FK_News_NewsCategory" FromRole="News" ToRole="NewsCategory" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_News_SuperAccounts" FromRole="News" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_News_SuperAccountsDelete" FromRole="News" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount2" Relationship="AmjadModel.FK_News_SuperAccountsUpdate" FromRole="News" ToRole="SuperAccount" />
+    <NavigationProperty Name="NewsComments" Relationship="AmjadModel.FK_NewsComments_News" FromRole="News" ToRole="NewsComment" />
+  </EntityType>
+  <EntityType Name="NewsCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShowTitle" Type="Boolean" />
+    <Property Name="ShowSummary" Type="Boolean" />
+    <Property Name="ShowDetails" Type="Boolean" />
+    <Property Name="ShowImageName" Type="Boolean" />
+    <Property Name="ShowCategory" Type="Boolean" />
+    <Property Name="ShowFileName" Type="Boolean" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="ShowVideoName" Type="Boolean" />
+    <NavigationProperty Name="News" Relationship="AmjadModel.FK_News_NewsCategory" FromRole="NewsCategory" ToRole="News" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_NewsCategory_SuperAccounts" FromRole="NewsCategory" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_NewsCategory_SuperAccountsDelete" FromRole="NewsCategory" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount2" Relationship="AmjadModel.FK_NewsCategory_SuperAccountsUpdate" FromRole="NewsCategory" ToRole="SuperAccount" />
+  </EntityType>
+  <EntityType Name="NewsComment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewsId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="News" Relationship="AmjadModel.FK_NewsComments_News" FromRole="NewsComment" ToRole="News" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_NewsComments_SuperAccounts" FromRole="NewsComment" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_NewsComments_SuperAccountsDelete" FromRole="NewsComment" ToRole="SuperAccount" />
+  </EntityType>
+  <EntityType Name="PagesCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShowTitle" Type="Boolean" />
+    <Property Name="ShowSummary" Type="Boolean" />
+    <Property Name="ShowDetails" Type="Boolean" />
+    <Property Name="ShowFileName" Type="Boolean" />
+    <NavigationProperty Name="Pages" Relationship="AmjadModel.FK_Pages_PagesCategory" FromRole="PagesCategory" ToRole="Page" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Summary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="NewWindow" Type="Boolean" Nullable="false" />
+    <Property Name="LangId" Type="Int32" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Language" Relationship="AmjadModel.FK_Slider_Languages" FromRole="Slider" ToRole="Language" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_Slider_SuperAccounts" FromRole="Slider" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_Slider_SuperAccountsDelete" FromRole="Slider" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount2" Relationship="AmjadModel.FK_Slider_SuperAccountsUpdate" FromRole="Slider" ToRole="SuperAccount" />
+  </EntityType>
+  <EntityType Name="SuperAccount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="IsAdmin" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <NavigationProperty Name="Advs" Relationship="AmjadModel.FK_Adv_SuperAccounts" FromRole="SuperAccount" ToRole="Adv" />
+    <NavigationProperty Name="Advs1" Relationship="AmjadModel.FK_Adv_SuperAccountsDelete" FromRole="SuperAccount" ToRole="Adv" />
+    <NavigationProperty Name="Advs2" Relationship="AmjadModel.FK_Adv_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="Adv" />
+    <NavigationProperty Name="Clients" Relationship="AmjadModel.FK_Clients_SuperAccounts" FromRole="SuperAccount" ToRole="Client" />
+    <NavigationProperty Name="Clients1" Relationship="AmjadModel.FK_Clients_SuperAccountsDelete" FromRole="SuperAccount" ToRole="Client" />
+    <NavigationProperty Name="Clients2" Relationship="AmjadModel.FK_Clients_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="Client" />
+    <NavigationProperty Name="ContactUs" Relationship="AmjadModel.FK_ContactUs_SuperAccounts" FromRole="SuperAccount" ToRole="ContactU" />
+    <NavigationProperty Name="ContactUsInfoes" Relationship="AmjadModel.FK_ContactUsInfo_SuperAccounts" FromRole="SuperAccount" ToRole="ContactUsInfo" />
+    <NavigationProperty Name="ContactUsInfoes1" Relationship="AmjadModel.FK_ContactUsInfo_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="ContactUsInfo" />
+    <NavigationProperty Name="Counters" Relationship="AmjadModel.FK_Counts_SuperAccounts" FromRole="SuperAccount" ToRole="Counter" />
+    <NavigationProperty Name="Counters1" Relationship="AmjadModel.FK_Counts_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="Counter" />
+    <NavigationProperty Name="News" Relationship="AmjadModel.FK_News_SuperAccounts" FromRole="SuperAccount" ToRole="News" />
+    <NavigationProperty Name="News1" Relationship="AmjadModel.FK_News_SuperAccountsDelete" FromRole="SuperAccount" ToRole="News" />
+    <NavigationProperty Name="News2" Relationship="AmjadModel.FK_News_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="News" />
+    <NavigationProperty Name="NewsCategories" Relationship="AmjadModel.FK_NewsCategory_SuperAccounts" FromRole="SuperAccount" ToRole="NewsCategory" />
+    <NavigationProperty Name="NewsCategories1" Relationship="AmjadModel.FK_NewsCategory_SuperAccountsDelete" FromRole="SuperAccount" ToRole="NewsCategory" />
+    <NavigationProperty Name="NewsCategories2" Relationship="AmjadModel.FK_NewsCategory_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="NewsCategory" />
+    <NavigationProperty Name="NewsComments" Relationship="AmjadModel.FK_NewsComments_SuperAccounts" FromRole="SuperAccount" ToRole="NewsComment" />
+    <NavigationProperty Name="NewsComments1" Relationship="AmjadModel.FK_NewsComments_SuperAccountsDelete" FromRole="SuperAccount" ToRole="NewsComment" />
+    <NavigationProperty Name="Sliders" Relationship="AmjadModel.FK_Slider_SuperAccounts" FromRole="SuperAccount" ToRole="Slider" />
+    <NavigationProperty Name="Sliders1" Relationship="AmjadModel.FK_Slider_SuperAccountsDelete" FromRole="SuperAccount" ToRole="Slider" />
+    <NavigationProperty Name="Sliders2" Relationship="AmjadModel.FK_Slider_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="Slider" />
+    <NavigationProperty Name="SuperPermissions" Relationship="AmjadModel.FK_SuperPermissions_SuperAccounts" FromRole="SuperAccount" ToRole="SuperPermission" />
+    <NavigationProperty Name="Videos" Relationship="AmjadModel.FK_Videos_SuperAccounts" FromRole="SuperAccount" ToRole="Video" />
+    <NavigationProperty Name="Videos1" Relationship="AmjadModel.FK_Videos_SuperAccountsDelete" FromRole="SuperAccount" ToRole="Video" />
+    <NavigationProperty Name="Videos2" Relationship="AmjadModel.FK_Videos_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="Video" />
+    <NavigationProperty Name="Lawyers" Relationship="AmjadModel.FK_Lawyers_SuperAccounts" FromRole="SuperAccount" ToRole="Lawyer" />
+    <NavigationProperty Name="Lawyers1" Relationship="AmjadModel.FK_Lawyers_SuperAccountsDelete" FromRole="SuperAccount" ToRole="Lawyer" />
+    <NavigationProperty Name="Lawyers2" Relationship="AmjadModel.FK_Lawyers_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="Lawyer" />
+    <NavigationProperty Name="Pages" Relationship="AmjadModel.FK_Pages_SuperAccounts" FromRole="SuperAccount" ToRole="Page" />
+    <NavigationProperty Name="Pages1" Relationship="AmjadModel.FK_Pages_SuperAccountsUpdate" FromRole="SuperAccount" ToRole="Page" />
+  </EntityType>
+  <EntityType Name="SuperPageCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SuperPages" Relationship="AmjadModel.FK_SuperPages_SuperPageCategory" FromRole="SuperPageCategory" ToRole="SuperPage" />
+  </EntityType>
+  <EntityType Name="SuperPermission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SuperAccountId" Type="Int32" />
+    <Property Name="SuperPageId" Type="Int32" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_SuperPermissions_SuperAccounts" FromRole="SuperPermission" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperPage" Relationship="AmjadModel.FK_SuperPermissions_SuperPages" FromRole="SuperPermission" ToRole="SuperPage" />
+  </EntityType>
+  <EntityType Name="Video">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CatId" Type="Int32" />
+    <Property Name="ImageName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="VideoName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Summary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LangId" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsBest" Type="Boolean" />
+    <Property Name="Views" Type="Int32" />
+    <NavigationProperty Name="Language" Relationship="AmjadModel.FK_Videos_Languages" FromRole="Video" ToRole="Language" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_Videos_SuperAccounts" FromRole="Video" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_Videos_SuperAccountsDelete" FromRole="Video" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount2" Relationship="AmjadModel.FK_Videos_SuperAccountsUpdate" FromRole="Video" ToRole="SuperAccount" />
+    <NavigationProperty Name="VideosCategory" Relationship="AmjadModel.FK_Videos_VideosCategory" FromRole="Video" ToRole="VideosCategory" />
+  </EntityType>
+  <EntityType Name="VideosCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Videos" Relationship="AmjadModel.FK_Videos_VideosCategory" FromRole="VideosCategory" ToRole="Video" />
+  </EntityType>
+  <Association Name="FK_Adv_AdvPositions">
+    <End Type="AmjadModel.AdvPosition" Role="AdvPosition" Multiplicity="0..1" />
+    <End Type="AmjadModel.Adv" Role="Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvPosition">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adv_Languages">
+    <End Type="AmjadModel.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="AmjadModel.Adv" Role="Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adv_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Adv" Role="Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adv_SuperAccountsDelete">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Adv" Role="Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adv_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Adv" Role="Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_Languages">
+    <End Type="AmjadModel.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="AmjadModel.Client" Role="Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Client" Role="Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_SuperAccountsDelete">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Client" Role="Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Client" Role="Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactUs_ContactUsCategory">
+    <End Type="AmjadModel.ContactUsCategory" Role="ContactUsCategory" Multiplicity="0..1" />
+    <End Type="AmjadModel.ContactU" Role="ContactU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContactUsCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ContactU">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactUs_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.ContactU" Role="ContactU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactU">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactUsInfo_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.ContactUsInfo" Role="ContactUsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactUsInfo">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactUsInfo_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.ContactUsInfo" Role="ContactUsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactUsInfo">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Counts_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Counter" Role="Counter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Counter">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Counts_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Counter" Role="Counter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Counter">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Images_ImagesCategory">
+    <End Type="AmjadModel.ImagesCategory" Role="ImagesCategory" Multiplicity="0..1" />
+    <End Type="AmjadModel.Image" Role="Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImagesCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Images_Languages">
+    <End Type="AmjadModel.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="AmjadModel.Image" Role="Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Languages">
+    <End Type="AmjadModel.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="AmjadModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Slider_Languages">
+    <End Type="AmjadModel.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="AmjadModel.Slider" Role="Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_Languages">
+    <End Type="AmjadModel.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="AmjadModel.Video" Role="Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_NewsCategory">
+    <End Type="AmjadModel.NewsCategory" Role="NewsCategory" Multiplicity="0..1" />
+    <End Type="AmjadModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewsCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="catId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_SuperAccountsDelete">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsComments_News">
+    <End Type="AmjadModel.News" Role="News" Multiplicity="0..1" />
+    <End Type="AmjadModel.NewsComment" Role="NewsComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="NewsComment">
+        <PropertyRef Name="NewsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsCategory_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.NewsCategory" Role="NewsCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsCategory">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsCategory_SuperAccountsDelete">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.NewsCategory" Role="NewsCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsCategory">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsCategory_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.NewsCategory" Role="NewsCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsCategory">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsComments_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.NewsComment" Role="NewsComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsComment">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsComments_SuperAccountsDelete">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.NewsComment" Role="NewsComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsComment">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Slider_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Slider" Role="Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Slider_SuperAccountsDelete">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Slider" Role="Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Slider_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Slider" Role="Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuperPermissions_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.SuperPermission" Role="SuperPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SuperPermission">
+        <PropertyRef Name="SuperAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Video" Role="Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_SuperAccountsDelete">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Video" Role="Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Video" Role="Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_VideosCategory">
+    <End Type="AmjadModel.VideosCategory" Role="VideosCategory" Multiplicity="0..1" />
+    <End Type="AmjadModel.Video" Role="Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VideosCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Lawyer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="About" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FaceBook" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Twitter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Google" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LinkedIn" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Pinterest" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Instagram" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Skype" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LangId" Type="Int32" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <Property Name="UserIdDelete" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Language" Relationship="AmjadModel.FK_Lawyers_Languages" FromRole="Lawyer" ToRole="Language" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_Lawyers_SuperAccounts" FromRole="Lawyer" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_Lawyers_SuperAccountsDelete" FromRole="Lawyer" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount2" Relationship="AmjadModel.FK_Lawyers_SuperAccountsUpdate" FromRole="Lawyer" ToRole="SuperAccount" />
+  </EntityType>
+  <Association Name="FK_Lawyers_Languages">
+    <End Type="AmjadModel.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="AmjadModel.Lawyer" Role="Lawyer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lawyer">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lawyers_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Lawyer" Role="Lawyer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lawyer">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lawyers_SuperAccountsDelete">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Lawyer" Role="Lawyer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lawyer">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lawyers_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Lawyer" Role="Lawyer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lawyer">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SuperPage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderId" Type="Int32" />
+    <Property Name="visible" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="SuperPageCategory" Relationship="AmjadModel.FK_SuperPages_SuperPageCategory" FromRole="SuperPage" ToRole="SuperPageCategory" />
+    <NavigationProperty Name="SuperPermissions" Relationship="AmjadModel.FK_SuperPermissions_SuperPages" FromRole="SuperPage" ToRole="SuperPermission" />
+  </EntityType>
+  <Association Name="FK_SuperPages_SuperPageCategory">
+    <End Type="AmjadModel.SuperPageCategory" Role="SuperPageCategory" Multiplicity="0..1" />
+    <End Type="AmjadModel.SuperPage" Role="SuperPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperPageCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SuperPage">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuperPermissions_SuperPages">
+    <End Type="AmjadModel.SuperPage" Role="SuperPage" Multiplicity="0..1" />
+    <End Type="AmjadModel.SuperPermission" Role="SuperPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperPage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SuperPermission">
+        <PropertyRef Name="SuperPageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catId" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LangId" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="UserIdAdd" Type="Int32" />
+    <Property Name="UserIdUpdate" Type="Int32" />
+    <NavigationProperty Name="Language" Relationship="AmjadModel.FK_Pages_Languages" FromRole="Page" ToRole="Language" />
+    <NavigationProperty Name="PagesCategory" Relationship="AmjadModel.FK_Pages_PagesCategory" FromRole="Page" ToRole="PagesCategory" />
+    <NavigationProperty Name="SuperAccount" Relationship="AmjadModel.FK_Pages_SuperAccounts" FromRole="Page" ToRole="SuperAccount" />
+    <NavigationProperty Name="SuperAccount1" Relationship="AmjadModel.FK_Pages_SuperAccountsUpdate" FromRole="Page" ToRole="SuperAccount" />
+  </EntityType>
+  <Association Name="FK_Pages_Languages">
+    <End Type="AmjadModel.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="AmjadModel.Page" Role="Page" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Page">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_PagesCategory">
+    <End Type="AmjadModel.PagesCategory" Role="PagesCategory" Multiplicity="0..1" />
+    <End Type="AmjadModel.Page" Role="Page" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PagesCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Page">
+        <PropertyRef Name="catId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_SuperAccounts">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Page" Role="Page" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Page">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_SuperAccountsUpdate">
+    <End Type="AmjadModel.SuperAccount" Role="SuperAccount" Multiplicity="0..1" />
+    <End Type="AmjadModel.Page" Role="Page" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Page">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

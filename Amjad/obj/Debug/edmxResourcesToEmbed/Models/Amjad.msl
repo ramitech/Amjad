@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AmjadModelStoreContainer" CdmEntityContainer="AmjadEntities">
+    <EntitySetMapping Name="Advs">
+      <EntityTypeMapping TypeName="AmjadModel.Adv">
+        <MappingFragment StoreEntitySet="Adv">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdvPositions">
+      <EntityTypeMapping TypeName="AmjadModel.AdvPosition">
+        <MappingFragment StoreEntitySet="AdvPositions">
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="AmjadModel.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUs">
+      <EntityTypeMapping TypeName="AmjadModel.ContactU">
+        <MappingFragment StoreEntitySet="ContactUs">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUsCategories">
+      <EntityTypeMapping TypeName="AmjadModel.ContactUsCategory">
+        <MappingFragment StoreEntitySet="ContactUsCategory">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUsInfoes">
+      <EntityTypeMapping TypeName="AmjadModel.ContactUsInfo">
+        <MappingFragment StoreEntitySet="ContactUsInfo">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="InfoEn" ColumnName="InfoEn" />
+          <ScalarProperty Name="AddressEn" ColumnName="AddressEn" />
+          <ScalarProperty Name="Info" ColumnName="Info" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="GoogleMap" ColumnName="GoogleMap" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="Pinterest" ColumnName="Pinterest" />
+          <ScalarProperty Name="Linkedin" ColumnName="Linkedin" />
+          <ScalarProperty Name="Google" ColumnName="Google" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="FaceBook" ColumnName="FaceBook" />
+          <ScalarProperty Name="Skype2" ColumnName="Skype2" />
+          <ScalarProperty Name="Skype1" ColumnName="Skype1" />
+          <ScalarProperty Name="Email2" ColumnName="Email2" />
+          <ScalarProperty Name="Email1" ColumnName="Email1" />
+          <ScalarProperty Name="Mobile2" ColumnName="Mobile2" />
+          <ScalarProperty Name="Mobile1" ColumnName="Mobile1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Counters">
+      <EntityTypeMapping TypeName="AmjadModel.Counter">
+        <MappingFragment StoreEntitySet="Counters">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="LawyersCount" ColumnName="LawyersCount" />
+          <ScalarProperty Name="AwardsCount" ColumnName="AwardsCount" />
+          <ScalarProperty Name="ClientsCount" ColumnName="ClientsCount" />
+          <ScalarProperty Name="CasesCount" ColumnName="CasesCount" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="AmjadModel.Image">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImagesCategories">
+      <EntityTypeMapping TypeName="AmjadModel.ImagesCategory">
+        <MappingFragment StoreEntitySet="ImagesCategory">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="AmjadModel.Language">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="AmjadModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="Views" ColumnName="Views" />
+          <ScalarProperty Name="IsBest" ColumnName="IsBest" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="VideoName" ColumnName="VideoName" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="catId" ColumnName="catId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsCategories">
+      <EntityTypeMapping TypeName="AmjadModel.NewsCategory">
+        <MappingFragment StoreEntitySet="NewsCategory">
+          <ScalarProperty Name="ShowVideoName" ColumnName="ShowVideoName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ShowFileName" ColumnName="ShowFileName" />
+          <ScalarProperty Name="ShowCategory" ColumnName="ShowCategory" />
+          <ScalarProperty Name="ShowImageName" ColumnName="ShowImageName" />
+          <ScalarProperty Name="ShowDetails" ColumnName="ShowDetails" />
+          <ScalarProperty Name="ShowSummary" ColumnName="ShowSummary" />
+          <ScalarProperty Name="ShowTitle" ColumnName="ShowTitle" />
+          <ScalarProperty Name="EName" ColumnName="EName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsComments">
+      <EntityTypeMapping TypeName="AmjadModel.NewsComment">
+        <MappingFragment StoreEntitySet="NewsComments">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PagesCategories">
+      <EntityTypeMapping TypeName="AmjadModel.PagesCategory">
+        <MappingFragment StoreEntitySet="PagesCategory">
+          <ScalarProperty Name="ShowFileName" ColumnName="ShowFileName" />
+          <ScalarProperty Name="ShowDetails" ColumnName="ShowDetails" />
+          <ScalarProperty Name="ShowSummary" ColumnName="ShowSummary" />
+          <ScalarProperty Name="ShowTitle" ColumnName="ShowTitle" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="AmjadModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="NewWindow" ColumnName="NewWindow" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuperAccounts">
+      <EntityTypeMapping TypeName="AmjadModel.SuperAccount">
+        <MappingFragment StoreEntitySet="SuperAccounts">
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuperPageCategories">
+      <EntityTypeMapping TypeName="AmjadModel.SuperPageCategory">
+        <MappingFragment StoreEntitySet="SuperPageCategory">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuperPermissions">
+      <EntityTypeMapping TypeName="AmjadModel.SuperPermission">
+        <MappingFragment StoreEntitySet="SuperPermissions">
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="SuperPageId" ColumnName="SuperPageId" />
+          <ScalarProperty Name="SuperAccountId" ColumnName="SuperAccountId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Videos">
+      <EntityTypeMapping TypeName="AmjadModel.Video">
+        <MappingFragment StoreEntitySet="Videos">
+          <ScalarProperty Name="Views" ColumnName="Views" />
+          <ScalarProperty Name="IsBest" ColumnName="IsBest" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="VideoName" ColumnName="VideoName" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideosCategories">
+      <EntityTypeMapping TypeName="AmjadModel.VideosCategory">
+        <MappingFragment StoreEntitySet="VideosCategory">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lawyers">
+      <EntityTypeMapping TypeName="AmjadModel.Lawyer">
+        <MappingFragment StoreEntitySet="Lawyers">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserIdDelete" ColumnName="UserIdDelete" />
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="Skype" ColumnName="Skype" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="Pinterest" ColumnName="Pinterest" />
+          <ScalarProperty Name="LinkedIn" ColumnName="LinkedIn" />
+          <ScalarProperty Name="Google" ColumnName="Google" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="FaceBook" ColumnName="FaceBook" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="About" ColumnName="About" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuperPages">
+      <EntityTypeMapping TypeName="AmjadModel.SuperPage">
+        <MappingFragment StoreEntitySet="SuperPages">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="AmjadModel.Page">
+        <MappingFragment StoreEntitySet="Pages">
+          <ScalarProperty Name="UserIdUpdate" ColumnName="UserIdUpdate" />
+          <ScalarProperty Name="UserIdAdd" ColumnName="UserIdAdd" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="catId" ColumnName="catId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

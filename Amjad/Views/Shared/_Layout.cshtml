@@ -1,0 +1,283 @@
+﻿@{ 
+    var Sliders = ViewBag.Sliders as IEnumerable<Amjad.Models.Slider>;
+    var ContactUsInfo = ViewBag.ContactUsInfo as Amjad.Models.ContactUsInfo;
+    int i = 1;
+}
+<!doctype html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/FrontEnd/images/favicon.ico">
+    <title>مكتب المحامي خميس عصفور وشركاه | @ViewBag.Title</title>
+    <!-- Reset CSS -->
+    <link href="/Content/FrontEnd/css/reset.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap -->
+    <link href="/Content/FrontEnd/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Select2 -->
+    <link href="/Content/FrontEnd/assets/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome -->
+    <link href="/Content/FrontEnd/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Magnific Popup -->
+    <link href="/Content/FrontEnd/assets/magnific-popup/css/magnific-popup.css" rel="stylesheet" type="text/css">
+    <!-- Iconmoon -->
+    <link href="/Content/FrontEnd/assets/iconmoon/css/iconmoon.css" rel="stylesheet" type="text/css">
+    <!-- Owl Carousel -->
+    <link href="/Content/FrontEnd/assets/owl-carousel/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+    <!-- Animate -->
+    <link href="/Content/FrontEnd/css/animate.css" rel="stylesheet" type="text/css">
+    <!-- Custom Style -->
+    <link href="/Content/FrontEnd/css/custom.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="/Content/FrontEnd/js/html5shiv.min.js"></script>
+          <script src="/Content/FrontEnd/js/respond.min.js"></script>
+        <![endif]-->
+    @RenderSection("cssCode",false)
+</head>
+<body>
+    <!-- Start Preloader -->
+    <div id="loading">
+        <div class="element">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <!-- Start Header -->
+    <header>
+        <!-- Start Header Middle -->
+        <div class="header-middle">
+            <div class="row">
+                <span class="logo"><a href="@Url.Action("index")"><img src="/Content/FrontEnd/images/logo.png" class="img-responsive" alt=""></a></span>
+                <div class="header-right-bottom">
+                    <!-- Start Header Right -->
+                    <div class="header-right-top">
+
+                        <!-- Start Navigation -->
+                        <nav class="navbar navbar-expand-xl navbar-dark navbar-custom">
+                            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="@Url.Action("index")">الصفحة الرئيسية</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="@Url.Action("Specialty")">مجال اختصاصنا</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="@Url.Action("lawyers")">المحامون</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="@Url.Action("News")">الأخبار</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="@Url.Action("About")">من نحن</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="@Url.Action("Consult")">استشارة مجانية</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="call_section">
+                            <a class="tel-number" href="@Url.Action("Consult")">استشارة مجانية</a>
+                            <a class="free-consultation_btn" href="#">دخول العملاء</a>
+                        </div>
+                    </div>
+                    <!-- End Navigation -->
+                    <!-- End Header Right -->
+                </div>
+            </div>
+        </div>
+        <!-- End Header Middle -->
+    </header>
+    <!-- End Header -->
+    <!-- Start Banner Carousel -->
+    <div class="banner-outer">
+        <div class="banner-slider">
+            @foreach (var item in Sliders)
+            {
+                <div class="slide@(i++)" style="background: url(/Content/Files/@item.Image) no-repeat center top / cover;">
+                    <div class="container">
+                        <div class="content animated fadeInRight">
+                            <div class="fl-right">
+                                @*<h1 class="animated fadeInRight">انت تستحق</h1>*@
+                                <h2 class="animated fadeInRight">@item.Title</h2>
+                                <p class="animated fadeInRight">@item.Summary</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+    <!-- End Banner Carousel -->
+
+    @RenderBody()
+
+    <!-- Start Footer -->
+    <footer class="footer">
+
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="contact-us">
+                            <h3>اتصل بنا</h3>
+                            <a href="@Url.Action("Contact")"><i class="fa fa-arrow-left" aria-hidden="true"></i> تواصل معنا</a>
+                            @if (!string.IsNullOrEmpty(ContactUsInfo.Address))
+                            {
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i>@ContactUsInfo.Address</p>
+                            }
+
+                            @if (!string.IsNullOrEmpty(ContactUsInfo.Phone1))
+                            {
+                                <a href="tel:@ContactUsInfo.Phone1"><i class="fa fa-phone" aria-hidden="true"></i>@ContactUsInfo.Phone1</a>
+                            }
+                            @if (!string.IsNullOrEmpty(ContactUsInfo.Email1))
+                            {
+                                <a href="mailto:@ContactUsInfo.Email1" style="font-size:13px !important"><i class="fa fa-envelope" aria-hidden="true"></i>@ContactUsInfo.Email1</a>
+                            }
+
+                            <ul class="follow-us clearfix">
+                                @if (!string.IsNullOrEmpty(ContactUsInfo.FaceBook))
+                                {
+                                    <li><a href="@ContactUsInfo.FaceBook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                }
+                                @if (!string.IsNullOrEmpty(ContactUsInfo.Twitter))
+                                {
+                                    <li><a href="@ContactUsInfo.Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                }
+                                @if (!string.IsNullOrEmpty(ContactUsInfo.Linkedin))
+                                {
+                                    <li><a href="@ContactUsInfo.Linkedin" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="open-time">
+                            <h3>أوقات الدوام</h3>
+                            <p>@Html.Raw(ContactUsInfo.Info.Replace("\n", "<br>"))</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="practice-area">
+                            <h3>مجال اختصاصنا </h3>
+                            <ul class="clearfix">
+                                <li><a href="@Url.Action("Page", new {@id = 7 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> البناء والهندسة</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 8 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> المصرفية والمالية</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 9 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> الشركات التجارية</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 10 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> تسوية المنازعات</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 11 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> تكنولوجيا المعلومات والاتصالات</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 12 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> الملكية الفكرية</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 13 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> وسائل الإعلام</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 14 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> المشاريع</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 15 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> الاستثمار العقاري</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="practice-area">
+                            <h3>من نحن</h3>
+                            <ul class="clearfix">
+                                <li><a href="@Url.Action("Page", new {@id = 3 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> رسالة الرئيس</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 4 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> السيرة الذاتية</a></li>
+                                <li><a href="@Url.Action("Page", new {@id = 5 })"><i class="fa fa-arrow-left" aria-hidden="true"></i> الشهادات العلمية والمهنية</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+        <!-- Copy Rights -->
+        <div class="copy-rights-section">
+            <div class="container">
+                <div class="row">
+                    <p>© @DateTime.Now.Year مكتب المحامي خميس عصفور - كل الحقوق محفوظة</p>
+                </div>
+            </div>
+        </div>
+        <!-- End Copy Rights -->
+    </footer>
+    <!-- End Footer -->
+    <!-- Scroll to top -->
+    <a href="#" class="scroll-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+
+
+    <div class="modal fade" id="iFrame" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/Content/FrontEnd/js/jquery.min.js"></script>
+    <!-- popper.min JS -->
+    <script src="/Content/FrontEnd/js/popper.min.js"></script>
+    <!-- Bootsrap JS -->
+    <script src="/Content/FrontEnd/assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="/Content/FrontEnd/assets/select2/js/select2.min.js"></script>
+    <!-- Match Height JS -->
+    <script src="/Content/FrontEnd/assets/matchHeight/js/matchHeight-min.js"></script>
+    <!-- Bxslider JS -->
+    <script src="/Content/FrontEnd/assets/bxslider/js/bxslider.min.js"></script>
+    <!-- Waypoints JS -->
+    <script src="/Content/FrontEnd/assets/waypoints/js/waypoints.min.js"></script>
+    <!-- Counter Up JS -->
+    <script src="/Content/FrontEnd/assets/counterup/js/counterup.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="/Content/FrontEnd/assets/magnific-popup/js/magnific-popup.min.js"></script>
+    <!-- Owl Carousal JS -->
+    <script src="/Content/FrontEnd/assets/owl-carousel/js/owl.carousel.min.js"></script>
+    <!-- Modernizr JS -->
+    <script src="/Content/FrontEnd/js/modernizr.custom.js"></script>
+    <!-- Custom JS -->
+    <script src="/Content/FrontEnd/js/custom.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+
+            $(document).on("click", "a.iFrame", function () {
+                $("#iFrame").modal("show");
+                $("#iFrame .modal-title").html($(this).attr("title"));
+                $("#iFrame .modal-body").html("<iframe frameborder=0 width=100% height=550 src='" + $(this).attr("href") + "'></iframe>");
+               
+                return false;
+            });
+
+            $("#iFrame").on('hide.bs.modal', function () {
+                $("#iFrame .modal-body").html("");
+            });
+
+
+
+        })
+    </script>
+    @RenderSection("jsCode", false)
+</body>
+</html>

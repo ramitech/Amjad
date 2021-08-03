@@ -1,0 +1,486 @@
+﻿@{ 
+    var Menu = ViewBag.Menu as IEnumerable<Amjad.Models.SuperPage>;
+}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title | لوحة التحكم</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+
+    <link href="/Content/Metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Metronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Metronic/assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Metronic/assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="/Content/Metronic/assets/global/css/components-rtl.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="/Content/Metronic/assets/global/css/plugins-rtl.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="/Content/Metronic/assets/layouts/layout2/css/layout-rtl.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Metronic/assets/layouts/layout2/css/themes/blue-rtl.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="/Content/Metronic/assets/layouts/layout2/css/custom-rtl.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" href="/Content/Metronic/favicon.ico" />
+    <link href="/Content/Metronic/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <style>
+        .select2-selection__rendered {
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            background-color: #fff;
+            border: 1px solid #c2cad8;
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
+    @RenderSection("cssCode", false)
+</head>
+<!-- END HEAD -->
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+    <!-- BEGIN HEADER -->
+    <div class="page-header navbar navbar-fixed-top">
+        <!-- BEGIN HEADER INNER -->
+        <div class="page-header-inner ">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                
+                <a href="/CMS/Home/">
+                    <img src="/Content/Metronic/assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default" />
+                </a>
+                
+                <div class="menu-toggler sidebar-toggler">
+                    <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                </div>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+            
+            <div class="page-top">
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- BEGIN NOTIFICATION DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        @*<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-default"> 7 </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                        <span class="bold">12 pending</span> notifications
+                                    </h3>
+                                    <a href="page_user_profile_1.html">view all</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">just now</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-success">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span> New user registered.
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">3 mins</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Server #12 overloaded.
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">10 mins</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> Server #2 not responding.
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">14 hrs</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> Application error.
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">2 days</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Database overloaded 68%.
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">3 days</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> A user IP blocked.
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">4 days</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> Storage Server #4 not responding dfdfdfd.
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">5 days</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> System Error.
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">9 days</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Storage server failed.
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>*@
+                        
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="/Content/Metronic/assets/layouts/layout2/img/avatar3_small.jpg" />
+                                <span class="username username-hide-on-mobile"> @ViewBag.CurrentAdminName </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="@Url.Action("ChangePassword","home")">
+                                        <i class="icon-user"></i> تغيير كلمة المرور
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Logout","home")">
+                                        <i class="icon-key"></i> تسجيل خروج
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END PAGE TOP -->
+        </div>
+        <!-- END HEADER INNER -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN HEADER & CONTENT DIVIDER -->
+    <div class="clearfix"> </div>
+    <!-- END HEADER & CONTENT DIVIDER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse">
+             
+                    <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        <li class="nav-item start">
+                            <a href="@Url.Action("index","home")" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">الرئيسية</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        @{ 
+                            var MainMenu = Menu.Where(x => x.ParentId == 0).ToList();
+                        }
+                        @foreach (var main in MainMenu)
+                        {
+                           <li class="nav-item">
+                            <a href="@main.URL" class="nav-link nav-toggle">
+                                <i class="icon-note"></i>
+                                <span class="title">@main.Title</span>
+                                <span class="arrow"></span>
+                                <ul class="sub-menu">
+                                    @{
+                                        var SubMenu = Menu.Where(x => x.ParentId == main.ID).ToList();
+                                    }
+                                    @foreach (var sub in SubMenu)
+                                    {
+                                        <li class="nav-item">
+                                            <a href="@sub.URL" class="nav-link ">
+                                                <i class="@sub.Icon"></i>
+                                                <span class="title">@sub.Title</span>
+                                            </a>
+                                        </li>
+                                    }
+                                   
+                                </ul>
+                            </a>
+                        </li>
+
+                        }
+                     
+
+
+                    </ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+            <!-- END SIDEBAR -->
+        </div>
+        <!-- END SIDEBAR -->
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <!-- BEGIN CONTENT BODY -->
+            <div class="page-content">
+                <h3 class="page-title">
+                    @ViewBag.Title
+                    <small>@ViewBag.SubTitle</small>
+                </h3>
+                <div class="portlet light">
+                    <div class="portlet-body">                     
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT BODY -->
+        </div>
+        <!-- END CONTENT -->
+        <!-- BEGIN QUICK SIDEBAR -->
+        <a href="javascript:;" class="page-quick-sidebar-toggler">
+            <i class="icon-login"></i>
+        </a>
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            @DateTime.Now.Year &copy; لوحة التحكم الخاصة بموقع مكتب المحامي خميس عصفور وشركاه.
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Confirm" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">تأكيد</h4>
+                </div>
+                <div class="modal-body">
+                    <p>هل انت متأكد من الحذف؟</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">الغاء الأمر</button>
+                    <a class="btn btn-danger">نعم, متأكد</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    <div class="modal fade" id="iFrame" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script src="/Content/Metronic/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="/Content/Metronic/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/Content/Metronic/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="/Content/Metronic/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+    <script src="/Content/Metronic/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="/Content/Metronic/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="/Content/Metronic/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="/Content/Metronic/assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="/Content/Metronic/assets/layouts/layout2/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="/Content/Metronic/assets/layouts/layout2/scripts/demo.min.js" type="text/javascript"></script>
+    <script src="/Content/Metronic/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>    
+    <script src="/Content/Metronic/assets/global/plugins/select2/js/select2.min.js"></script>
+    <!-- END THEME LAYOUT SCRIPTS -->
+    <script>
+        $(function () {
+
+            // Select2 
+            $(".select2").select2();
+            // init slug
+            $("#Title,#Name").change(function () {
+                $("#Slug").val($(this).val().replace(/\ /g, '_'));
+            });
+
+            UploadFileHandler();
+            //كذكلك هذه تسلم          
+
+            $(document).on("click", "a.Confirm", function () {
+                $("#Confirm").modal("show");//شغل الموادل تاع التحذير
+                $("#Confirm .btn-danger").attr("href", $(this).attr("href"));
+                return false;//ماتكمل وتحذف
+            });
+            $(document).on("click", "a.iFrame", function () {
+                $("#iFrame").modal("show");//شغل الموادل تاع التحذير
+                $("#iFrame .modal-title").html($(this).attr("title"));//غيرنا عنوان الموديل على هوى الاتربيوت تاتيل
+                //فتحنا الصفحة المطلوبة في اي فرام داخل الموديل 
+                $("#iFrame .modal-body").html("<iframe frameborder=0 width=100% height=550 src='" +
+                    $(this).attr("href")
+                    +"'></iframe>");
+                return false;//ماتكمل وتحذف
+            });
+        
+            $(document).on("click", ".cbSelect", function () {
+                $(".cbSelectAll").prop("checked", $(".cbSelect").size() ==
+                    $(".cbSelect").filter(":checked").size());
+                UpdateDeleteSelectedButton();
+            });
+            $(document).on("click", ".cbSelectAll", function () {
+                $(".cbSelect").prop("checked", $(this).prop("checked"));
+                UpdateDeleteSelectedButton();
+            });
+        });
+        function UpdateDeleteSelectedButton() {
+            $(".btnDeleteSelected").prop("disabled", $(".cbSelect").filter(":checked").size() == 0);
+        }
+
+        //حتتسلم للصفحة الام
+        function ToJavaScriptDate(value) {
+            var pattern = /Date\(([^)]+)\)/;
+            var results = pattern.exec(value);
+            var dt = new Date(parseFloat(results[1]));
+            return dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+        }
+        function DisplayMessage(msg) {
+            var msgClass = "alert alert-info";
+            if (msg.indexOf("s:") == 0) {
+                msg = msg.substring(2);
+                msgClass = "alert alert-success";
+            }
+            else if (msg.indexOf("e:") == 0) {
+                msg = msg.substring(2);
+                msgClass = "alert alert-danger";
+            }
+            else if (msg.indexOf("i:") == 0) {
+                msg = msg.substring(2);
+                msgClass = "alert alert-info";
+            }
+            else if (msg.indexOf("w:") == 0) {
+                msg = msg.substring(2);
+                msgClass = "alert alert-warning";
+            }
+            $(".MSG").html('<div class="' + msgClass + '">' +
+                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+               msg + '</div>');
+        }
+
+        function UploadFileHandler() {
+            $(document).on("click", ".btnDeleteFile", function () {
+                var cc = $(this);
+                $.post("/CMS/Home/DeleteFile", { id: $(this).data("fname") }, function (json) {
+                    var InputFileName = $(cc).closest("table").prev().find("[type=file]").data("hname");
+                    $(cc).closest("table").prev().show();
+                    $(cc).closest("table").remove();
+                    $("#" + InputFileName).val("");
+                    if (json.status == 1) DisplayMessage(json.msg);
+                });
+            });
+            $(".btnUpload").click(function () {
+                if (window.FormData !== undefined) {
+                    var fileUpload = $(this).prev().get(0);
+                    var files = fileUpload.files;
+                    var fileData = new FormData();
+                    for (var i = 0; i < files.length; i++) {
+                        fileData.append(files[i].name, files[i]);
+                    }
+                    var x = $(this);
+                    var InputFileName = $(this).prev().data('hname');
+                    fileData.append('type', $(this).prev().data('type'));
+                    $.ajax({
+                        url: '/CMS/Home/PostUploadFiles',
+                        type: "POST",
+                        contentType: false, // Not to set any content header
+                        processData: false, // Not to process data
+                        data: fileData,
+                        success: function (result) {
+                            if (result.status != 1) {
+                                DisplayMessage(result.msg);
+                            }
+                            else {
+                                $(x).prev().val("");
+                                DisplayMessage(result.msg);
+                                var html = "<table class='table table-condensed table-bordered'>";
+                                $(result.images).each(function () {
+                                    html += "<tr><td>" + this.oldfname +
+                                    "</td><td width=7%><a data-fname='" + this.fname
+                                    + "' class='btn btnDeleteFile btn-danger btn-xs'><i class='fa fa-trash'></i> حذف</a></td></tr>";
+                                    if ($("#" + InputFileName).val() == "")
+                                        $("#" + InputFileName).val(this.fname);
+                                    else
+                                        if ($(x).prev().is("[multiple]")) {
+                                            $("#" + InputFileName).val($("#" + InputFileName).val() + "," + this.fname);
+
+                                        }
+                                        else {
+                                            $("#" + InputFileName).val(this.fname);
+                                        }
+                                });
+                                html += "</table>";
+                                $(x).parent().after(html);
+                                $(x).parent().hide();
+                            }
+                        },
+                        error: function (err) {
+                            alert(err.statusText);
+                        }
+                    });
+                } else {
+                    alert("FormData is not supported.");
+                }
+            });
+        }
+    </script>
+    @RenderSection("jsCode", false)
+    
+</body>
+</html>

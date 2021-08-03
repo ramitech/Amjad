@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Amjad.Models.Lawyer>
+
+@{
+}
+<!-- BEGIN EXAMPLE TABLE PORTLET-->
+<div class="portlet box grey-cascade">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-globe"></i>@ViewBag.Title
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-toolbar">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group">
+                        <a class="btn green" href="@Url.Action("Create")">
+                            <i class='fa fa-plus'></i> جديد
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-bordered table-hover" id="v4table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.JobTitle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.About)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.Image))
+                        {
+                            <img src="/Content/Files/@item.Image" width="100" />
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.About)
+                    </td>
+                    <td>
+                        @(item.Date != null ? item.Date.Value.ToString("dd/MM/yyyy hh:mm tt") : "")
+                    </td>
+
+                    <td>
+                        <a href="@Url.Action("Edit", new { id=item.Id })" class="btn btn-primary btn-xs">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                        <a href="@Url.Action("Details", new { id=item.Id })" class="btn iFrame btn-warning btn-xs">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                        </a>
+                        <a href="@Url.Action("Delete", new { id=item.Id })" class="btn Confirm btn-danger btn-xs">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+@section cssCode
+{
+    <link href="~/assets/plugins/datatables/datatables.min.css" rel="stylesheet" />
+}
+@section jsCode
+{
+    <script src="~/assets/plugins/datatables/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var table = $('table').DataTable({
+                "sCookiePrefix": "all_",
+                "language": { "url": "/assets/plugins/datatables/arabic.json" },
+                "bSort": false, "lengthMenu": [[10, 50, 100, 1000], [10, 50, 100, 1000]]
+            });
+        });
+    </script>
+}

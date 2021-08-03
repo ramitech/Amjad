@@ -1,0 +1,1138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AmjadModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Adv">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PositionId" Type="int" />
+    <Property Name="Link" Type="nvarchar" MaxLength="500" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="LangId" Type="int" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="AdvPositions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Width" Type="nvarchar" MaxLength="50" />
+    <Property Name="Height" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+    <Property Name="Link" Type="varchar(max)" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="LangId" Type="int" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="DateUpdate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ContactUs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CatId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Summary" Type="nvarchar(max)" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ContactUsCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ContactUsInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Phone1" Type="varchar" MaxLength="50" />
+    <Property Name="Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile1" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile2" Type="varchar" MaxLength="50" />
+    <Property Name="Email1" Type="varchar" MaxLength="50" />
+    <Property Name="Email2" Type="varchar" MaxLength="50" />
+    <Property Name="Skype1" Type="varchar" MaxLength="50" />
+    <Property Name="Skype2" Type="varchar" MaxLength="50" />
+    <Property Name="FaceBook" Type="varchar(max)" />
+    <Property Name="Twitter" Type="varchar(max)" />
+    <Property Name="Google" Type="varchar(max)" />
+    <Property Name="Linkedin" Type="varchar(max)" />
+    <Property Name="Pinterest" Type="varchar(max)" />
+    <Property Name="Instagram" Type="varchar(max)" />
+    <Property Name="GoogleMap" Type="varchar(max)" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Info" Type="nvarchar" MaxLength="200" />
+    <Property Name="AddressEn" Type="nvarchar" MaxLength="200" />
+    <Property Name="InfoEn" Type="nvarchar" MaxLength="200" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Counters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CasesCount" Type="int" />
+    <Property Name="ClientsCount" Type="int" />
+    <Property Name="AwardsCount" Type="int" />
+    <Property Name="LawyersCount" Type="int" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CatId" Type="int" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="LangId" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="DateUpdate" Type="datetime" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ImagesCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Lawyers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="About" Type="nvarchar(max)" />
+    <Property Name="Image" Type="varchar(max)" />
+    <Property Name="FaceBook" Type="varchar(max)" />
+    <Property Name="Twitter" Type="varchar(max)" />
+    <Property Name="Google" Type="varchar(max)" />
+    <Property Name="LinkedIn" Type="varchar(max)" />
+    <Property Name="Pinterest" Type="varchar(max)" />
+    <Property Name="Instagram" Type="varchar(max)" />
+    <Property Name="Skype" Type="varchar(max)" />
+    <Property Name="LangId" Type="int" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="DateUpdate" Type="datetime" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catId" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Summary" Type="nvarchar(max)" />
+    <Property Name="Details" Type="ntext" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="50" />
+    <Property Name="VideoName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LangId" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="DateUpdate" Type="datetime" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="IsBest" Type="bit" />
+    <Property Name="Views" Type="int" />
+  </EntityType>
+  <EntityType Name="NewsCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="EName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShowTitle" Type="bit" />
+    <Property Name="ShowSummary" Type="bit" />
+    <Property Name="ShowDetails" Type="bit" />
+    <Property Name="ShowImageName" Type="bit" />
+    <Property Name="ShowCategory" Type="bit" />
+    <Property Name="ShowFileName" Type="bit" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="ShowVideoName" Type="bit" />
+  </EntityType>
+  <EntityType Name="NewsComments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewsId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Summary" Type="nvarchar(max)" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Pages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catId" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Summary" Type="nvarchar(max)" />
+    <Property Name="Details" Type="ntext" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LangId" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+  </EntityType>
+  <EntityType Name="PagesCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShowTitle" Type="bit" />
+    <Property Name="ShowSummary" Type="bit" />
+    <Property Name="ShowDetails" Type="bit" />
+    <Property Name="ShowFileName" Type="bit" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="URL" Type="nvarchar" MaxLength="500" />
+    <Property Name="Summary" Type="nvarchar" MaxLength="500" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="NewWindow" Type="bit" Nullable="false" />
+    <Property Name="LangId" Type="int" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="DateUpdate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="SuperAccounts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="IsAdmin" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+  </EntityType>
+  <EntityType Name="SuperPageCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SuperPages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="URL" Type="nvarchar" MaxLength="50" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="visible" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="SuperPermissions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SuperAccountId" Type="int" />
+    <Property Name="SuperPageId" Type="int" />
+    <Property Name="UserIdAdd" Type="int" />
+  </EntityType>
+  <EntityType Name="Videos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CatId" Type="int" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="250" />
+    <Property Name="VideoName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Summary" Type="nvarchar" MaxLength="500" />
+    <Property Name="LangId" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="DateUpdate" Type="datetime" />
+    <Property Name="UserIdAdd" Type="int" />
+    <Property Name="UserIdUpdate" Type="int" />
+    <Property Name="UserIdDelete" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsBest" Type="bit" />
+    <Property Name="Views" Type="int" />
+  </EntityType>
+  <EntityType Name="VideosCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Adv_AdvPositions">
+    <End Role="AdvPositions" Type="Self.AdvPositions" Multiplicity="0..1" />
+    <End Role="Adv" Type="Self.Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvPositions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adv_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+    <End Role="Adv" Type="Self.Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adv_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Adv" Type="Self.Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adv_SuperAccountsDelete">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Adv" Type="Self.Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adv_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Adv" Type="Self.Adv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_SuperAccountsDelete">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactUs_ContactUsCategory">
+    <End Role="ContactUsCategory" Type="Self.ContactUsCategory" Multiplicity="0..1" />
+    <End Role="ContactUs" Type="Self.ContactUs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContactUsCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ContactUs">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactUs_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="ContactUs" Type="Self.ContactUs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactUs">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactUsInfo_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="ContactUsInfo" Type="Self.ContactUsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactUsInfo">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactUsInfo_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="ContactUsInfo" Type="Self.ContactUsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactUsInfo">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Counts_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Counters" Type="Self.Counters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Counters">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Counts_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Counters" Type="Self.Counters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Counters">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Images_ImagesCategory">
+    <End Role="ImagesCategory" Type="Self.ImagesCategory" Multiplicity="0..1" />
+    <End Role="Images" Type="Self.Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImagesCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Images">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Images_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+    <End Role="Images" Type="Self.Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Images">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lawyers_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+    <End Role="Lawyers" Type="Self.Lawyers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lawyers">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lawyers_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Lawyers" Type="Self.Lawyers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lawyers">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lawyers_SuperAccountsDelete">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Lawyers" Type="Self.Lawyers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lawyers">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lawyers_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Lawyers" Type="Self.Lawyers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lawyers">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_NewsCategory">
+    <End Role="NewsCategory" Type="Self.NewsCategory" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewsCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="catId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_SuperAccountsDelete">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsCategory_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="NewsCategory" Type="Self.NewsCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsCategory">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsCategory_SuperAccountsDelete">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="NewsCategory" Type="Self.NewsCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsCategory">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsCategory_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="NewsCategory" Type="Self.NewsCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsCategory">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsComments_News">
+    <End Role="News" Type="Self.News" Multiplicity="0..1" />
+    <End Role="NewsComments" Type="Self.NewsComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="NewsComments">
+        <PropertyRef Name="NewsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsComments_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="NewsComments" Type="Self.NewsComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsComments">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsComments_SuperAccountsDelete">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="NewsComments" Type="Self.NewsComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsComments">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+    <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_PagesCategory">
+    <End Role="PagesCategory" Type="Self.PagesCategory" Multiplicity="0..1" />
+    <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PagesCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="catId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Slider_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+    <End Role="Slider" Type="Self.Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Slider_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Slider" Type="Self.Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Slider_SuperAccountsDelete">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Slider" Type="Self.Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Slider_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Slider" Type="Self.Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuperPages_SuperPageCategory">
+    <End Role="SuperPageCategory" Type="Self.SuperPageCategory" Multiplicity="0..1" />
+    <End Role="SuperPages" Type="Self.SuperPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperPageCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SuperPages">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuperPermissions_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="SuperPermissions" Type="Self.SuperPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SuperPermissions">
+        <PropertyRef Name="SuperAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuperPermissions_SuperPages">
+    <End Role="SuperPages" Type="Self.SuperPages" Multiplicity="0..1" />
+    <End Role="SuperPermissions" Type="Self.SuperPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperPages">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SuperPermissions">
+        <PropertyRef Name="SuperPageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+    <End Role="Videos" Type="Self.Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Videos">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_SuperAccounts">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Videos" Type="Self.Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Videos">
+        <PropertyRef Name="UserIdAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_SuperAccountsDelete">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Videos" Type="Self.Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Videos">
+        <PropertyRef Name="UserIdDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_SuperAccountsUpdate">
+    <End Role="SuperAccounts" Type="Self.SuperAccounts" Multiplicity="0..1" />
+    <End Role="Videos" Type="Self.Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuperAccounts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Videos">
+        <PropertyRef Name="UserIdUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videos_VideosCategory">
+    <End Role="VideosCategory" Type="Self.VideosCategory" Multiplicity="0..1" />
+    <End Role="Videos" Type="Self.Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VideosCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Videos">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AmjadModelStoreContainer">
+    <EntitySet Name="Adv" EntityType="Self.Adv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdvPositions" EntityType="Self.AdvPositions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactUsCategory" EntityType="Self.ContactUsCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactUsInfo" EntityType="Self.ContactUsInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Counters" EntityType="Self.Counters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImagesCategory" EntityType="Self.ImagesCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lawyers" EntityType="Self.Lawyers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsCategory" EntityType="Self.NewsCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsComments" EntityType="Self.NewsComments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pages" EntityType="Self.Pages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PagesCategory" EntityType="Self.PagesCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuperAccounts" EntityType="Self.SuperAccounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuperPageCategory" EntityType="Self.SuperPageCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuperPages" EntityType="Self.SuperPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuperPermissions" EntityType="Self.SuperPermissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Videos" EntityType="Self.Videos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VideosCategory" EntityType="Self.VideosCategory" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Adv_AdvPositions" Association="Self.FK_Adv_AdvPositions">
+      <End Role="AdvPositions" EntitySet="AdvPositions" />
+      <End Role="Adv" EntitySet="Adv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adv_Languages" Association="Self.FK_Adv_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Adv" EntitySet="Adv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adv_SuperAccounts" Association="Self.FK_Adv_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Adv" EntitySet="Adv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adv_SuperAccountsDelete" Association="Self.FK_Adv_SuperAccountsDelete">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Adv" EntitySet="Adv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adv_SuperAccountsUpdate" Association="Self.FK_Adv_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Adv" EntitySet="Adv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Languages" Association="Self.FK_Clients_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_SuperAccounts" Association="Self.FK_Clients_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_SuperAccountsDelete" Association="Self.FK_Clients_SuperAccountsDelete">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_SuperAccountsUpdate" Association="Self.FK_Clients_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactUs_ContactUsCategory" Association="Self.FK_ContactUs_ContactUsCategory">
+      <End Role="ContactUsCategory" EntitySet="ContactUsCategory" />
+      <End Role="ContactUs" EntitySet="ContactUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactUs_SuperAccounts" Association="Self.FK_ContactUs_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="ContactUs" EntitySet="ContactUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactUsInfo_SuperAccounts" Association="Self.FK_ContactUsInfo_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="ContactUsInfo" EntitySet="ContactUsInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactUsInfo_SuperAccountsUpdate" Association="Self.FK_ContactUsInfo_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="ContactUsInfo" EntitySet="ContactUsInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Counts_SuperAccounts" Association="Self.FK_Counts_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Counters" EntitySet="Counters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Counts_SuperAccountsUpdate" Association="Self.FK_Counts_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Counters" EntitySet="Counters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Images_ImagesCategory" Association="Self.FK_Images_ImagesCategory">
+      <End Role="ImagesCategory" EntitySet="ImagesCategory" />
+      <End Role="Images" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Images_Languages" Association="Self.FK_Images_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Images" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lawyers_Languages" Association="Self.FK_Lawyers_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Lawyers" EntitySet="Lawyers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lawyers_SuperAccounts" Association="Self.FK_Lawyers_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Lawyers" EntitySet="Lawyers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lawyers_SuperAccountsDelete" Association="Self.FK_Lawyers_SuperAccountsDelete">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Lawyers" EntitySet="Lawyers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lawyers_SuperAccountsUpdate" Association="Self.FK_Lawyers_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Lawyers" EntitySet="Lawyers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Languages" Association="Self.FK_News_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_NewsCategory" Association="Self.FK_News_NewsCategory">
+      <End Role="NewsCategory" EntitySet="NewsCategory" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_SuperAccounts" Association="Self.FK_News_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_SuperAccountsDelete" Association="Self.FK_News_SuperAccountsDelete">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_SuperAccountsUpdate" Association="Self.FK_News_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsCategory_SuperAccounts" Association="Self.FK_NewsCategory_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="NewsCategory" EntitySet="NewsCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsCategory_SuperAccountsDelete" Association="Self.FK_NewsCategory_SuperAccountsDelete">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="NewsCategory" EntitySet="NewsCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsCategory_SuperAccountsUpdate" Association="Self.FK_NewsCategory_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="NewsCategory" EntitySet="NewsCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsComments_News" Association="Self.FK_NewsComments_News">
+      <End Role="News" EntitySet="News" />
+      <End Role="NewsComments" EntitySet="NewsComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsComments_SuperAccounts" Association="Self.FK_NewsComments_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="NewsComments" EntitySet="NewsComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsComments_SuperAccountsDelete" Association="Self.FK_NewsComments_SuperAccountsDelete">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="NewsComments" EntitySet="NewsComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_Languages" Association="Self.FK_Pages_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_PagesCategory" Association="Self.FK_Pages_PagesCategory">
+      <End Role="PagesCategory" EntitySet="PagesCategory" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_SuperAccounts" Association="Self.FK_Pages_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_SuperAccountsUpdate" Association="Self.FK_Pages_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Slider_Languages" Association="Self.FK_Slider_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Slider" EntitySet="Slider" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Slider_SuperAccounts" Association="Self.FK_Slider_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Slider" EntitySet="Slider" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Slider_SuperAccountsDelete" Association="Self.FK_Slider_SuperAccountsDelete">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Slider" EntitySet="Slider" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Slider_SuperAccountsUpdate" Association="Self.FK_Slider_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Slider" EntitySet="Slider" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuperPages_SuperPageCategory" Association="Self.FK_SuperPages_SuperPageCategory">
+      <End Role="SuperPageCategory" EntitySet="SuperPageCategory" />
+      <End Role="SuperPages" EntitySet="SuperPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuperPermissions_SuperAccounts" Association="Self.FK_SuperPermissions_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="SuperPermissions" EntitySet="SuperPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuperPermissions_SuperPages" Association="Self.FK_SuperPermissions_SuperPages">
+      <End Role="SuperPages" EntitySet="SuperPages" />
+      <End Role="SuperPermissions" EntitySet="SuperPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_Languages" Association="Self.FK_Videos_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Videos" EntitySet="Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_SuperAccounts" Association="Self.FK_Videos_SuperAccounts">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Videos" EntitySet="Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_SuperAccountsDelete" Association="Self.FK_Videos_SuperAccountsDelete">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Videos" EntitySet="Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_SuperAccountsUpdate" Association="Self.FK_Videos_SuperAccountsUpdate">
+      <End Role="SuperAccounts" EntitySet="SuperAccounts" />
+      <End Role="Videos" EntitySet="Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videos_VideosCategory" Association="Self.FK_Videos_VideosCategory">
+      <End Role="VideosCategory" EntitySet="VideosCategory" />
+      <End Role="Videos" EntitySet="Videos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

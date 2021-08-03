@@ -1,0 +1,67 @@
+﻿@model Amjad.Models.ContactU
+
+@{
+}
+<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption font-green-haze">
+            <i class="icon-settings font-green-haze"></i>
+            <span class="caption-subject bold uppercase"> التفاصيل </span>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <div class="table-toolbar">
+            <div class="row customized">
+                <div class="col-md-6">
+                    <div class="btn-group">
+							<a class="btn green" href="@Url.Action("Index")">
+								<i class='fa fa-undo'></i> الرجوع
+							</a>&nbsp;
+							@*<a class="btn green" href="@Url.Action("Edit", new { id = Model.ID })">
+								<i class='fa fa-edit'></i> Edit
+							</a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+								<div class="form-group form-md-line-input">
+									@Html.LabelFor(model => model.Name, new { @class = "col-md-2 control-label righttext" })
+									 <label class="col-md-9">
+										@Html.DisplayFor(model => model.Name)
+									</label>
+								</div>
+								<div class="form-group form-md-line-input">
+									@Html.LabelFor(model => model.Email, new { @class = "col-md-2 control-label righttext" })
+									 <label class="col-md-9">
+										@Html.DisplayFor(model => model.Email)
+									</label>
+								</div>
+								<div class="form-group form-md-line-input">
+									@Html.LabelFor(model => model.Title, new { @class = "col-md-2 control-label righttext" })
+									 <label class="col-md-9">
+										@Html.DisplayFor(model => model.Title)
+									</label>
+								</div>
+								<div class="form-group form-md-line-input">
+									@Html.LabelFor(model => model.Summary, new { @class = "col-md-2 control-label righttext" })
+									 <label class="col-md-9">
+										@Html.DisplayFor(model => model.Summary)
+									</label>
+								</div>
+							
+								<div class="form-group form-md-line-input">
+									@Html.LabelFor(model => model.Date, new { @class = "col-md-2 control-label righttext" })
+									 <label class="col-md-9">
+										@(Model.Date != null ? Model.Date.Value.ToString("dd/MM/yyyy hh:mm tt") : "")
+									</label>
+								</div>
+								<div class="form-group form-md-line-input">
+									@Html.LabelFor(model => model.Notes, new { @class = "col-md-2 control-label righttext" })
+									 <label class="col-md-9">
+										@Html.DisplayFor(model => model.Notes)
+									</label>
+								</div>
+								
+	</div>
+</div>

@@ -1,0 +1,133 @@
+﻿@model Amjad.Models.Lawyer
+
+@{   
+}
+<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption font-green-haze">
+            <i class="icon-settings font-green-haze"></i>
+            <span class="caption-subject bold uppercase">حذف</span>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <div class="table-toolbar">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="red">Are you sure ?</h3>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" class="btn red" value="Delete" />
+            <a class="btn green" href="@Url.Action("Index")">
+                <i class='fa fa-undo'></i> الرجوع
+            </a>
+        }
+
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.Name, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.Name)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.JobTitle, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.JobTitle)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.About, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.About)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.Image, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.Image)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.FaceBook, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.FaceBook)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.Twitter, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.Twitter)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.Google, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.Google)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.LinkedIn, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.LinkedIn)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.Pinterest, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.Pinterest)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.Instagram, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.Instagram)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.Skype, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.Skype)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.Date, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.Date)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.isdelete, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.isdelete)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.Language.Name, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.Language.Name)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.SuperAccount.Name, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.SuperAccount.Name)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.SuperAccount1.Name, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.SuperAccount1.Name)
+					</label>
+				</div>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.SuperAccount2.Name, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.SuperAccount2.Name)
+					</label>
+				</div>
+</div>

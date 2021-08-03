@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Amjad.Models.Image>
+@{
+    ViewBag.Title = "معرض الصور";
+}
+
+
+<div class="wrapper">
+    <div class="container">
+
+        <div class="post-list">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="post-item">
+                          
+                            <div class="post-desc text-center">
+                                <h3>
+                                    <a href="/Content/Files/ImageGallery/@item.ImageName" rel="prettyPhoto[pp_gal]">
+                                        <img src="/Content/Files/ImageGallery/@item.ImageName"/>
+                                    </a>
+                                </h3>
+                                <time>@(item.Date != null ? item.Date.Value.ToString("dd/MM/yyyy") : "")</time>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+
+            @Html.Partial("_pagination")
+
+
+        </div>
+    </div>
+</div>
+
+@section cssPlugins
+{
+    <link href="~/Content/PrettyPhoto/css/prettyPhoto.css" rel="stylesheet" />
+}
+@section jsPlugins
+{
+    <script src="~/Content/PrettyPhoto/js/jquery-1.6.1.min.js"></script>
+    <script src="~/Content/PrettyPhoto/js/jquery.prettyPhoto.js"></script>
+}
+@section jsCode{
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $("a[rel^='prettyPhoto']").prettyPhoto();
+        });
+    </script>
+}

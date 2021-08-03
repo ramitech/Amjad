@@ -1,0 +1,100 @@
+﻿@model Amjad.Models.ContactU
+@{
+    ViewBag.Title = "استشارة مجانية";
+    var ContactUsInfo = ViewBag.ContactUsInfo as Amjad.Models.ContactUsInfo;
+}
+
+
+<!-- Start اتصل بنا -->
+<section class="contact-us padding-lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 form-wrapper">
+                <h2>نحن هنا لمساعدتك</h2>
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "comment-form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row input-row">
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "الاسم" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <div class="row input-row">
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "البريد الالكتروني" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row input-row">
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @placeholder = "عنوان الاستشارة" } })
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row input-row">
+                        <div class="col-sm-12">
+                            @Html.TextAreaFor(model => model.Summary, new { @class = "form-control", @rows = 5, @placeholder = "الاستشارة" })
+                            @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="submit" name="submit" class="btn btn-success btn-send" value="إرسال">
+                            <div class="msg" style="display:inline-block !important">
+                                <br />
+                                @Html.Partial("_msg")
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-sm-6 contact-info">
+                <h2>معلومات الاتصال</h2>
+
+                @if (!string.IsNullOrEmpty(ContactUsInfo.Address))
+                {
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> @ContactUsInfo.Address </p>
+                }
+                @if (!string.IsNullOrEmpty(ContactUsInfo.Phone1))
+                {
+                    <p class="number-info"><i class="fa fa-phone" aria-hidden="true"></i> <span class="numbers"><a href="tel:@ContactUsInfo.Phone1">@ContactUsInfo.Phone1</a><br /> <a href="tel:@ContactUsInfo.Phone1">@ContactUsInfo.Phone1</a></span></p>
+                }
+                @if (!string.IsNullOrEmpty(ContactUsInfo.Email1))
+                {
+                    <p><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:@ContactUsInfo.Email1">@ContactUsInfo.Email1</a></p>
+                }
+                <div class="connect-with-us">
+                    <h2>اتصل بنا : </h2>
+                    <ul class="follow-us clearfix">
+                        @if (!string.IsNullOrEmpty(ContactUsInfo.FaceBook))
+                        {
+                            <li><a href="@ContactUsInfo.FaceBook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        }
+                        @if (!string.IsNullOrEmpty(ContactUsInfo.Twitter))
+                        {
+                            <li><a href="@ContactUsInfo.Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        }
+                        @if (!string.IsNullOrEmpty(ContactUsInfo.Linkedin))
+                        {
+                            <li><a href="@ContactUsInfo.Linkedin" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end اتصل بنا -->
+<!-- Start Google Map -->
+<div class="google-map">
+    <div id="map">
+        @Html.Raw(ContactUsInfo.Google)
+    </div>
+</div>
+<!-- End Google Map -->
+
+@section jsCode {
+    @Scripts.Render("~/bundles/jqueryval")
+}

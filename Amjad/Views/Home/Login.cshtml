@@ -1,0 +1,58 @@
+﻿@model Amjad.Models.SuperAccount
+@{
+    ViewBag.Title = "تسجيل الدخول";
+
+}
+@section cssCode{
+    <style>
+        .form-control {
+            display: block;
+            width: 100%;
+            border-radius: 25px;
+            padding: 20px;
+            background: #a8a6a6;
+            border: none;
+            margin-bottom: 15px;
+        }
+        .comment-form{
+            width:100%
+        }
+    </style>
+}
+
+
+<div class="wrapper">
+    <div class="container">
+        @Html.Partial("_msg")
+      
+            <div class="row">
+                @using (@Html.BeginForm(null, null, FormMethod.Post, new { @class = "comment-form" }))
+                {
+                    @Html.AntiForgeryToken()
+                   
+                    <div class="col-sm-12">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "اسم المستخدم" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-12">
+                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "كلمة المرور" } )
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                  
+                    <div class="col-sm-12">
+                        <input type="checkbox" name="Remember" checked="checked" value="true" />  <span>تذكرني ؟</span>
+                        @Html.ValidationMessageFor(model => model.Remember, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-sm-12">
+                        <button type="submit" class="print-btn">تسجيل الدخول</button>
+                    </div>
+                }
+
+            </div>
+    </div>
+</div>
+
+@section jsCode {
+    @Scripts.Render("~/bundles/jqueryval")
+}

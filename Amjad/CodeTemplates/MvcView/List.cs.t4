@@ -1,0 +1,177 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension=".cshtml" #>
+<#@ include file="Imports.include.t4" #>
+@model IEnumerable<#= "<" + ViewDataTypeName + ">" #>
+<#
+// The following chained if-statement outputs the file header code and markup for a partial view, a view using a layout page, or a regular view.
+if(IsPartialView) {
+#>
+
+<#
+} else if(IsLayoutPageSelected) {
+#>
+
+@{
+<#
+if (!String.IsNullOrEmpty(LayoutPageFile)) {
+#>
+    Layout = "<#= LayoutPageFile#>";
+<#
+}
+#>
+}
+<#
+} else {
+#>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+<#
+    PushIndent("    ");
+}
+#>
+<!-- BEGIN EXAMPLE TABLE PORTLET-->
+<div class="portlet box grey-cascade">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-globe"></i>@ViewBag.Title
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-toolbar">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group">
+                        <a class="btn green" href="@Url.Action("Create")">
+                            <i class='fa fa-plus'></i> جديد
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<table class="table table-striped table-bordered table-hover" id="v4table">
+			<thead>
+				<tr>
+<#
+	IEnumerable<PropertyMetadata> properties = ModelMetadata.Properties;
+	foreach (PropertyMetadata property in properties) {
+		if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+#>
+<#
+			// We do not want to show any association properties for which there is
+			// no associated foreign key.
+			if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+				continue;
+			}
+#>
+					<th>
+						@Html.DisplayNameFor(model => model.<#= GetValueExpression(property) #>)
+					</th>
+<#
+		}
+	}
+#>
+					<th></th>
+				</tr>
+			</thead>
+@foreach (var item in Model) {
+			<tr>
+<#
+foreach (PropertyMetadata property in properties) {
+    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+#>
+<#
+        // We do not want to show any association properties for which there is
+        // no associated foreign key.
+        if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+            continue;
+        }
+#>
+				<td>
+					@Html.DisplayFor(modelItem => <#= "item." + GetValueExpression(property) #>)
+				</td>
+<#
+    }
+}
+
+string pkName = GetPrimaryKeyName();
+if (pkName != null) {
+#>
+				<td>
+					<a href="@Url.Action("Edit", new { id=item.<#= pkName #> })" class="btn btn-primary btn-xs">
+						<i class="glyphicon glyphicon-edit"></i>
+					</a>
+					<a href="@Url.Action("Details", new { id=item.<#= pkName #> })" class="btn iFrame btn-warning btn-xs">
+						<i class="glyphicon glyphicon-info-sign"></i>
+					</a>
+					<a href="@Url.Action("Delete", new { id=item.<#= pkName #> })" class="btn Confirm btn-danger btn-xs">
+						<i class="glyphicon glyphicon-trash"></i>
+					</a>
+				</td>
+<#
+} else {
+#>
+				<td>
+		
+					<a href="@Url.Action("Edit", new { id=item.<#= pkName #> })" class="btn btn-primary btn-xs">
+						<i class="glyphicon glyphicon-edit"></i>
+					</a>
+					<a href="@Url.Action("Details", new { id=item.<#= pkName #> })" class="btn iFrame btn-warning btn-xs">
+						<i class="glyphicon glyphicon-info-sign"></i>
+					</a>
+					<a href="@Url.Action("Delete", new { id=item.<#= pkName #> })" class="btn Confirm btn-danger btn-xs">
+						<i class="glyphicon glyphicon-trash"></i>
+					</a>
+				</td>
+<#
+}
+#>
+			</tr>
+}
+		</table>
+    </div>
+</div>
+<#
+// The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
+#>
+<#
+if(!IsPartialView && !IsLayoutPageSelected) {
+    ClearIndent();
+#>
+</body>
+</html>
+<#
+}
+#>
+
+@section cssPlugins
+{
+    <link href="~/assets/plugins/datatables/datatables.min.css" rel="stylesheet" />
+}
+@section jsPlugins
+{   
+    <script src="~/assets/plugins/datatables/datatables.min.js"></script>
+}
+@section jsCode
+{
+    <script>
+        $(document).ready(function() {
+            var table = $('table').DataTable({
+                "sCookiePrefix": "all_",
+                "language": { "url": "/assets/plugins/datatables/arabic.json" },
+                "bSort": false, "lengthMenu": [[10, 50, 100, 1000], [10, 50, 100, 1000]]
+            });
+        });
+    </script>
+}
+<#@ include file="ModelMetadataFunctions.cs.include.t4" #>

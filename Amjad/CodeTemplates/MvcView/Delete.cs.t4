@@ -1,0 +1,103 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension=".cshtml" #>
+<#@ include file="Imports.include.t4" #>
+@model <#= ViewDataTypeName #>
+<#
+// The following chained if-statement outputs the file header code and markup for a partial view, a view using a layout page, or a regular view.
+if(IsPartialView) {
+#>
+
+<#
+} else if(IsLayoutPageSelected) {
+#>
+
+@{   
+<#
+if (!String.IsNullOrEmpty(LayoutPageFile)) {
+#>
+    Layout = "<#= LayoutPageFile#>";
+<#
+}
+#>
+}
+<#
+} else {
+#>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+<#
+    PushIndent("    ");
+}
+#>
+<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption font-green-haze">
+            <i class="icon-settings font-green-haze"></i>
+            <span class="caption-subject bold uppercase">حذف</span>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <div class="table-toolbar">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="red">Are you sure ?</h3>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" class="btn red" value="Delete" />
+            <a class="btn green" href="@Url.Action("Index")">
+                <i class='fa fa-undo'></i> الرجوع
+            </a>
+        }
+
+<#
+		foreach (PropertyMetadata property in ModelMetadata.Properties) {
+			if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+#>
+<#
+				// We do not want to show any association properties for which there is
+				// no associated foreign key.
+				if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+					continue;
+				}
+#>
+				<div class="form-group form-md-line-input">
+					@Html.LabelFor(model => model.<#= GetValueExpression(property) #>, new { @class = "col-md-2 control-label righttext" })
+					<label class="col-md-9">
+						@Html.DisplayFor(model => model.<#= GetValueExpression(property) #>)
+					</label>
+				</div>
+<#
+			}
+		}
+#>
+</div>
+<#
+// The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
+#>
+<#
+if(!IsPartialView && !IsLayoutPageSelected) {
+    ClearIndent();
+#>
+</body>
+</html>
+<#
+}
+#>
+<#@ include file="ModelMetadataFunctions.cs.include.t4" #>

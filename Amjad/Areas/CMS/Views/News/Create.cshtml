@@ -1,0 +1,114 @@
+﻿@model Amjad.Models.News
+
+@{
+    var CatId = this.ViewContext.RouteData.Values["id"];
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box green ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> إضافة
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="btn-group">
+                                <a class="btn green" href="@Url.Action("Index",new {@id = CatId })">
+                                    <i class='fa fa-undo'></i> الرجوع
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @using (Html.BeginForm("", "", FormMethod.Post, new { @class = "form-horizontal", @role = "form", action = "", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-body">
+
+
+                        <div class="form-group" style="display:none">
+                            @Html.LabelFor(model => model.catId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("catId", null, htmlAttributes: new { @class = "form-control input-sm" })
+                                @Html.ValidationMessageFor(model => model.catId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(model => model.Summary, new { @class = "form-control", @rows = 5 })
+                                @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Details, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(model => model.Details, new { @class = "form-control summernote" })
+                                @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ImageName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <input type="file" name="img" class="form-control" />
+                                @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FileName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <input type="file" name="file" class="form-control" />
+                                @Html.ValidationMessageFor(model => model.FileName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn green" value="إضافة" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section cssCode
+{
+    <link href="~/Content/Metronic/assets/global/plugins/bootstrap-summernote/summernote.css" rel="stylesheet" />
+}
+@section jsCode {
+    <script src="~/Content/Metronic/assets/global/plugins/bootstrap-summernote/summernote.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(function () {
+            $.validator.setDefaults({
+                ignore: [],
+            });
+            $(".summernote").summernote({ height: 450 });
+        });
+    </script>
+}

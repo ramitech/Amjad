@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Amjad.Models.News>
+@{
+    ViewBag.Title = "الأخبار";  
+}
+
+
+<!-- Start Blog -->
+<div class="container blog-wrapper padding-lg">
+    <div class="row">
+        <!-- Start Left Column -->
+        <div class="col-sm-12 blog-left">
+            <ul class="blog-listing">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <img src="~/Content/Files/@item.ImageName" class="img-responsive" alt="@item.Title">
+                        <h2>@item.Title</h2>
+                        <ul class="post-detail">
+                            <li><span class="icon-date-icon ico"></span><span class="bold">@item.Date.Value.ToString("dd MMMM")</span> @item.Date.Value.ToString("yyyy")</li>
+
+                        </ul>
+                        <p>
+                            @Html.Raw(item.Summary.Replace("\n", "<br")))
+                        </p>
+                        <a href="@Url.Action("NewsDetails",new {@id = item.id })" class="read-more">إقرأ المزيد</a>
+                    </li>
+                }
+
+            </ul>
+
+            @Html.Partial("_pagination")
+        </div>
+        <!-- End Left Column -->
+      
+
+    </div>
+</div>
+<!-- End Blog -->
+
+

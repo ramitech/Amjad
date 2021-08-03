@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Amjad.Models.Lawyer>
+@{
+    ViewBag.Title = "المحامون";
+}
+
+
+<!-- Start محاموننا Section -->
+<section class="our-attorneys padding-lg attorney-page">
+    <div class="container">
+        <ul class="row">
+            @foreach (var item in Model)
+            {
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="cnt-block equal-hight">
+                        <figure><img src="~/Content/Files/@item.Image" class="img-responsive" alt="@item.Name"></figure>
+                        <h3><a href="attorney-profile.html">@item.Name</a></h3>
+                        <p>@item.JobTitle</p>
+                        <ul class="follow-us clearfix">
+                            @if (!string.IsNullOrEmpty(item.FaceBook))
+                            {
+                                <li><a href="@item.FaceBook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(item.Twitter))
+                            {
+                                <li><a href="@item.Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(item.LinkedIn))
+                            {
+                                <li><a href="@item.LinkedIn" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            }
+                        </ul>
+                    </div>
+                </li>
+            }
+        </ul>
+       @Html.Partial("_pagination")
+    </div>
+</section>
+<!-- End محاموننا Section -->

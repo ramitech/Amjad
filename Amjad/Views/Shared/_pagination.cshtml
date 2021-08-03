@@ -1,0 +1,61 @@
+﻿
+@{
+
+    int PageCount = (int)ViewBag.PageCount;
+    int PageId = (int)ViewBag.PageId;
+    int MaxPageCount = 4;
+    int Min = 1;
+    int Max = (MaxPageCount * 2);
+    if (PageId > MaxPageCount)
+    {
+        Min = PageId - MaxPageCount;
+        Max = PageId + MaxPageCount;
+    }
+    if (Max > PageCount)
+    {
+        Max = PageCount;
+        Min = PageCount - (MaxPageCount * 2);
+        if (Min < 1)
+        {
+            Min = 1;
+        }
+    }
+    var Seperator = "?PageId=";
+    string BaseURL = ViewBag.BaseURL;
+    if (BaseURL.Contains("?"))
+    {
+        Seperator = "&PageId=";
+    }
+}
+
+
+@if (PageCount > 1)
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="pagination blue">
+                @if (PageId == 1)
+                {
+                    <li> <a href="#" aria-label="السابق" class="disabled"> <span aria-hidden="true"> السابق </span> </a> </li>
+                }
+                else
+                {
+                    <li> <a href="@BaseURL@Seperator@(PageId - 1)" aria-label="السابق"> <span aria-hidden="true"> السابق </span> </a> </li>
+
+                }
+                @for (int i = Min; i <= Max; i++)
+                {
+                    <li><a class="@(PageId == i ? "active" : "")" href="@BaseURL@Seperator@i">@i</a></li>
+                }
+                @if (PageId == PageCount)
+                {
+                    <li> <a href="@BaseURL@Seperator@(PageId + 1)" aria-label="التالى"> <span aria-hidden="true">التالى </span> </a> </li>
+                }
+                else
+                {
+                    <li> <a href="#" aria-label="التالى" class="disabled"> <span aria-hidden="true">التالى </span> </a> </li>
+                }
+            </ul>
+        </div>
+    </div>
+}

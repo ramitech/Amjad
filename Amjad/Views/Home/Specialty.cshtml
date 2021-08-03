@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Amjad.Models.Page>
+@{
+    ViewBag.Title = "مجال اختصاصنا";
+}
+
+
+<!-- Start Practice Area Section -->
+<section class="practice-area padding-lg caseBtmpd">
+    <div class="container">
+        <ul class="row">
+            @foreach (var item in Model)
+            {
+                <li class="col-12 col-md-4 equal-hight">
+                    <div class="inner">
+                        <img src="~/Content/Files/@item.ImageName" alt="@item.Title">
+                        <h3>@item.Title</h3>
+                        <p>@Html.Raw(item.Summary.Replace("\n", "<br>"))</p>
+                        <a class="read-more" href="@Url.Action("Page",new {@id = item.catId })">إقرأ المزيد</a>
+                    </div>
+                </li>
+            }
+        </ul>
+        
+    </div>
+</section>
+<!-- End Practice Area Section -->
+
+
