@@ -59,7 +59,13 @@
                 }
                 @if (!string.IsNullOrEmpty(ContactUsInfo.Phone1))
                 {
-                    <p class="number-info"><i class="fa fa-phone" aria-hidden="true"></i> <span class="numbers"><a href="tel:@ContactUsInfo.Phone1">@ContactUsInfo.Phone1</a><br /> <a href="tel:@ContactUsInfo.Phone1">@ContactUsInfo.Phone1</a></span></p>
+                    <p class="number-info"><i class="fa fa-phone" aria-hidden="true"></i> 
+                    <span class="numbers" style="direction:ltr">
+                        <a href="tel:@ContactUsInfo.Phone1">@ContactUsInfo.Phone1</a>
+                        <br /> 
+                        <a href="tel:@ContactUsInfo.Mobile1">@ContactUsInfo.Mobile1</a>
+                    </span>
+                  </p>
                 }
                 @if (!string.IsNullOrEmpty(ContactUsInfo.Email1))
                 {

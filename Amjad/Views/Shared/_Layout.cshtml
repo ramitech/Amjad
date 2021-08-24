@@ -147,6 +147,10 @@
                             {
                                 <a href="tel:@ContactUsInfo.Phone1"><i class="fa fa-phone" aria-hidden="true"></i>@ContactUsInfo.Phone1</a>
                             }
+                            @if (!string.IsNullOrEmpty(ContactUsInfo.Mobile1))
+                            {
+                                <a href="tel:@ContactUsInfo.Mobile1" style="direction:ltr"><i class="fa fa-mobile" aria-hidden="true"></i>@ContactUsInfo.Mobile1</a>
+                            }
                             @if (!string.IsNullOrEmpty(ContactUsInfo.Email1))
                             {
                                 <a href="mailto:@ContactUsInfo.Email1" style="font-size:13px !important"><i class="fa fa-envelope" aria-hidden="true"></i>@ContactUsInfo.Email1</a>
@@ -208,7 +212,7 @@
         <div class="copy-rights-section">
             <div class="container">
                 <div class="row">
-                    <p>© @DateTime.Now.Year مكتب المحامي خميس عصفور - كل الحقوق محفوظة</p>
+                    <p>© مكتب المحامي خميس عصفور - كل الحقوق محفوظة @DateTime.Now.Year</p>
                 </div>
             </div>
         </div>
